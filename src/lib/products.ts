@@ -28,7 +28,7 @@ export const products: Product[] = [
       "融合东非辣椒与香料秘方，层次分明的微辣风味，为烧烤与下饭菜带来热情一击。",
     price: "询价 / On request",
     image:
-      "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?w=800&q=80",
+      "https://images.unsplash.com/photo-1654605128009-9a148665a678?w=800&q=80",
     badge: "热卖",
   },
   {
