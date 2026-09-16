@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { company, consultWhatsApps } from "@/lib/contacts";
+import CertBadges from "@/components/CertBadges";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -7,23 +9,26 @@ export default function Footer() {
     <footer className="border-t border-charcoal/10 bg-cream-dark/50">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 sm:flex-row sm:items-start sm:justify-between sm:px-6 lg:px-8">
         <div className="max-w-md">
-          <div className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-burgundy text-[11px] font-bold text-cream ring-1 ring-gold/40">
-              AF
-            </span>
-            <div>
-              <p className="font-display text-lg font-semibold text-charcoal">
-                {company.brandZh}
-              </p>
-              <p className="text-xs font-medium tracking-wide text-paprika">
-                {company.legalName}
-              </p>
-            </div>
-          </div>
-          <p className="mt-3 text-sm text-muted">{company.sloganZh}</p>
+          <a href="#home" className="inline-block rounded-xl bg-white p-2 shadow-sm ring-1 ring-charcoal/5">
+            <Image
+              src="/brand/afrinova-horizontal.jpeg"
+              alt="AFRINOVA — Africa Nova"
+              width={200}
+              height={58}
+              className="h-10 w-auto object-contain"
+            />
+          </a>
+          <p className="mt-3 text-sm font-medium text-paprika">{company.legalName}</p>
+          <p className="mt-1 text-sm text-muted">{company.sloganZh}</p>
           <p className="mt-1 text-xs text-muted">
             {company.poBox} · {company.address}
           </p>
+          <div className="mt-4">
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted">
+              Certified · 认证
+            </p>
+            <CertBadges size="sm" />
+          </div>
         </div>
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
           <a href="#home" className="hover:text-paprika">

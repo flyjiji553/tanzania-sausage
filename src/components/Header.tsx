@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { company, consultWhatsApps } from "@/lib/contacts";
+import Image from "next/image";
+import { consultWhatsApps } from "@/lib/contacts";
 
 const navLinks = [
   { href: "#home", label: "主页", labelEn: "Home" },
@@ -16,21 +17,16 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-charcoal/5 bg-cream/95 shadow-[0_8px_30px_-12px_rgba(31,28,26,0.25)] backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#home" className="group flex items-center gap-2.5">
-          <span
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-burgundy text-[11px] font-bold tracking-tight text-cream shadow-sm ring-1 ring-gold/40"
-          >
-            AF
-          </span>
-          <div className="leading-tight">
-            <p className="font-display text-base font-semibold text-charcoal sm:text-lg">
-              {company.brandZh}
-            </p>
-            <p className="hidden text-[10px] tracking-[0.12em] uppercase text-muted sm:block">
-              {company.brandEn}
-            </p>
-          </div>
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 lg:px-8">
+        <a href="#home" className="group flex shrink-0 items-center">
+          <Image
+            src="/brand/afrinova-horizontal.jpeg"
+            alt="AFRINOVA — Africa Nova"
+            width={220}
+            height={64}
+            priority
+            className="h-10 w-auto object-contain sm:h-11"
+          />
         </a>
 
         <nav className="hidden items-center gap-1 md:flex">
