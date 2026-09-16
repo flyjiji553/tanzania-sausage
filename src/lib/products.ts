@@ -1,7 +1,7 @@
 export type Product = {
   id: string;
   name: string;
-  nameEn?: string;
+  nameZh?: string;
   description: string;
   price: string;
   image: string;
@@ -12,7 +12,7 @@ export const products: Product[] = [
   {
     id: "original-beef",
     name: "Original Beef Sausage",
-    nameEn: "原味牛肉香肠",
+    nameZh: "原味牛肉香肠",
     description:
       "Selected grass-fed beef, slow-roasted to keep a clean meat flavour and tender bite — ideal for everyday meals and breakfast.",
     price: "On request",
@@ -23,7 +23,7 @@ export const products: Product[] = [
   {
     id: "spicy",
     name: "Spicy Sausage",
-    nameEn: "香辣香肠",
+    nameZh: "香辣香肠",
     description:
       "East African chilli and spice blend with layered mild heat — great for grilling and everyday cooking.",
     price: "On request",
@@ -34,7 +34,7 @@ export const products: Product[] = [
   {
     id: "smoked",
     name: "Smoked Sausage",
-    nameEn: "烟熏风味香肠",
+    nameZh: "烟熏风味香肠",
     description:
       "Traditional wood-smoke finish, slow-cured for a juicy centre and lightly charred edge — made for sharing.",
     price: "On request",
@@ -44,7 +44,7 @@ export const products: Product[] = [
   {
     id: "herb",
     name: "Herb Blend Sausage",
-    nameEn: "香草混合香肠",
+    nameZh: "香草混合香肠",
     description:
       "Rosemary, thyme and local herbs for a fresh, light profile — pairs well with light meals and pasta.",
     price: "On request",
@@ -54,7 +54,7 @@ export const products: Product[] = [
   {
     id: "family-gift",
     name: "Family Gift Box",
-    nameEn: "家庭装礼盒",
+    nameZh: "家庭装礼盒",
     description:
       "A mixed-flavour gift assortment — taste the signature range in one box, for gifting or home stock.",
     price: "On request",
@@ -65,7 +65,7 @@ export const products: Product[] = [
   {
     id: "breakfast",
     name: "Breakfast Mini Links",
-    nameEn: "早餐迷你肠",
+    nameZh: "早餐迷你肠",
     description:
       "Bite-size links that heat quickly — designed for busy mornings and family breakfasts.",
     price: "On request",

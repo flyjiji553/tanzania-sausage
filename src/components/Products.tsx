@@ -45,8 +45,8 @@ export default function Products() {
                 <h3 className="font-display text-xl font-semibold text-charcoal">
                   {product.name}
                 </h3>
-                {product.nameEn && (
-                  <p className="mt-0.5 text-xs font-medium text-paprika">{product.nameEn}</p>
+                {product.nameZh && (
+                  <p className="mt-0.5 text-xs font-medium text-muted">{product.nameZh}</p>
                 )}
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
                   {product.description}

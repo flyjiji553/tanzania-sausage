@@ -1,6 +1,6 @@
 # AFRINOVA FOOD LIMITED — Tanzania Sausage Marketing Site
 
-Official single-page marketing website for **AFRINOVA FOOD LIMITED** (坦桑尼亚香肠).
+Official single-page marketing website for **AFRINOVA FOOD LIMITED**.
 
 Built with **Next.js App Router**, **TypeScript**, and **Tailwind CSS v4**.
 
@@ -10,10 +10,10 @@ Built with **Next.js App Router**, **TypeScript**, and **Tailwind CSS v4**.
 
 | Nav | Anchor | Content |
 |-----|--------|---------|
-| 主页 Home | `#home` | Hero image, slogan, feature chips, product highlights |
-| 产品 Products | `#products` | Product cards + 5 WhatsApp consultation lines |
-| 服务 Services | `#services` | Delivery areas / fees / agent regions + complaints |
-| 联系我们 Contact | `#contact` | Company intro, legal contacts, payment, agent form |
+| Home | `#home` | Hero image, slogan, feature chips, product highlights |
+| Products · Bidhaa | `#products` | Product cards + 5 WhatsApp consultation lines |
+| Services | `#services` | Delivery areas / fees / agent regions + complaints |
+| Contact · Wasiliana nasi | `#contact` | Company intro, legal contacts, payment, agent form |
 
 Also includes a floating WhatsApp FAB (bottom-right).
 
@@ -48,7 +48,7 @@ All business data is centralized:
 
 ### Products catalogue — `src/lib/products.ts`
 
-Names, descriptions, Unsplash image URLs, badges, price labels.
+English names (Chinese secondary), descriptions, Unsplash image URLs, badges, price labels.
 
 ### Agent application form — `src/components/AgentForm.tsx`
 
@@ -56,8 +56,9 @@ Client-side only: opens WhatsApp with a prefilled message, or a local `mailto:` 
 
 ## Design notes
 
-- Palette: cream / ivory, deep burgundy & paprika, charcoal, subtle gold
-- Chinese body + light Swahili touches (`Karibu`, `Wasiliana nasi`)
+- Palette: cream / ivory, AFRINOVA green `#118C3E`, warm paprika/gold accents, charcoal
+- English primary UI, light Swahili (`Karibu`, `Bidhaa`, `Wasiliana nasi`); Chinese kept as secondary copy
+- Header logo: `/brand/afrinova-horizontal.jpeg` · app icon: AFRINOVA star mark
 - Mobile-first sticky nav: Home · Products · Services · Contact
 
 ## Deploy

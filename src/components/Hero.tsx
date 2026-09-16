@@ -11,25 +11,25 @@ const chips = [
 const features = [
   {
     title: "Quality meat",
-    titleZh: "严选原料",
+    titleSw: "Nyama bora",
     description: "Selected quality beef with batch traceability — food you can trust on the table.",
     icon: "🥩",
   },
   {
     title: "East African taste",
-    titleZh: "东非风味",
+    titleSw: "Ladha ya Afrika Mashariki",
     description: "Traditional craftsmanship paired with modern food-safety standards.",
     icon: "🌶️",
   },
   {
     title: "Product range",
-    titleZh: "多种系列",
+    titleSw: "Bidhaa",
     description: "Original, spicy, smoked and more — for daily meals and gifting.",
     icon: "🎁",
   },
   {
     title: "Easy consult",
-    titleZh: "便捷咨询",
+    titleSw: "Wasiliana nasi",
     description: "Multi-line WhatsApp support for retail and wholesale inquiries.",
     icon: "💬",
   },
@@ -125,7 +125,7 @@ export default function Hero() {
                 <h3 className="mt-3 font-display text-lg font-semibold text-charcoal">
                   {f.title}
                 </h3>
-                <p className="mt-0.5 text-xs font-medium text-paprika">{f.titleZh}</p>
+                <p className="mt-0.5 text-xs font-medium text-brand-green">{f.titleSw}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{f.description}</p>
               </div>
             ))}

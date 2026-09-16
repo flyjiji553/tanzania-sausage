@@ -113,7 +113,7 @@ export default function AgentForm() {
         </a>
       </div>
       <p className="text-[11px] text-cream/45">
-        No backend: submit opens WhatsApp with a prefilled message, or a local email draft.
+        Submit opens WhatsApp with a prefilled message, or a local email draft.
       </p>
     </form>
   );
