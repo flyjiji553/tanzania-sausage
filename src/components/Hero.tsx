@@ -4,28 +4,28 @@ import { company, consultWhatsApps } from "@/lib/contacts";
 const chips = [
   { title: "Quality meat", titleSw: "Nyama bora" },
   { title: "East African", titleSw: "Afrika Mashariki" },
-  { title: "Product range", titleSw: "Bidhaa" },
+  { title: "Focused product line", titleSw: "Bidhaa" },
   { title: "WhatsApp consult", titleSw: "Wasiliana nasi" },
 ];
 
 const features = [
   {
-    title: "Quality meat",
-    titleSw: "Nyama bora",
-    description: "Selected quality beef with batch traceability — food you can trust on the table.",
-    icon: "🥩",
+    title: "Quality ingredients",
+    titleSw: "Viungo bora",
+    description: "Carefully developed recipes and consistent production for food you can trust on the table.",
+    icon: "🍗",
   },
   {
-    title: "East African taste",
-    titleSw: "Ladha ya Afrika Mashariki",
+    title: "Made for Tanzania",
+    titleSw: "Kwa Tanzania",
     description: "Traditional craftsmanship paired with modern food-safety standards.",
-    icon: "🌶️",
+    icon: "🌍",
   },
   {
-    title: "Product range",
+    title: "Focused product line",
     titleSw: "Bidhaa",
-    description: "Original, spicy, smoked and more — for daily meals and gifting.",
-    icon: "🎁",
+    description: "Chicken starch sausage is available now; pet and beef starch sausage are in development.",
+    icon: "🌭",
   },
   {
     title: "Easy consult",

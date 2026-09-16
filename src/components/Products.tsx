@@ -16,7 +16,7 @@ export default function Products() {
           </h2>
           <div className="gold-rule mx-auto mt-4" />
           <p className="mt-4 text-base text-muted sm:text-lg">
-            Selected flavour range. Prices confirmed via WhatsApp quote.
+            Our factory currently produces chicken starch sausage. Pet sausage and beef starch sausage are launching soon.
           </p>
         </div>
 
@@ -24,17 +24,28 @@ export default function Products() {
           {products.map((product) => (
             <article
               key={product.id}
-              className="card-lift group flex flex-col overflow-hidden rounded-2xl bg-ivory shadow-md ring-1 ring-charcoal/5"
+              className={`card-lift group flex flex-col overflow-hidden rounded-2xl bg-ivory shadow-md ring-1 ring-charcoal/5 ${
+                product.status === "coming_soon" ? "opacity-90" : ""
+              }`}
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover transition duration-700 group-hover:scale-105"
+                  className={`object-cover transition duration-700 group-hover:scale-105 ${
+                    product.status === "coming_soon" ? "grayscale-[20%]" : ""
+                  }`}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent opacity-60" />
+                {product.status === "coming_soon" && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-charcoal/20">
+                    <span className="rounded-full bg-charcoal/75 px-4 py-2 text-sm font-semibold text-cream backdrop-blur-sm">
+                      Coming soon
+                    </span>
+                  </div>
+                )}
                 {product.badge && (
                   <span className="absolute left-3 top-3 rounded-full bg-burgundy px-2.5 py-1 text-xs font-semibold text-cream shadow ring-1 ring-gold/30">
                     {product.badge}
@@ -52,14 +63,24 @@ export default function Products() {
                   {product.description}
                 </p>
                 <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-cream-dark pt-4">
-                  <p className="text-base font-bold text-brand-green">{product.price}</p>
-                  <WhatsAppButton
-                    contact={consultWhatsApps[0]}
-                    variant="dark"
-                    className="!px-4 !py-2 text-xs"
+                  <p
+                    className={`text-base font-bold ${
+                      product.status === "coming_soon" ? "text-muted" : "text-brand-green"
+                    }`}
                   >
-                    WhatsApp consult
-                  </WhatsAppButton>
+                    {product.price}
+                  </p>
+                  {product.status === "available" ? (
+                    <WhatsAppButton
+                      contact={consultWhatsApps[0]}
+                      variant="dark"
+                      className="!px-4 !py-2 text-xs"
+                    >
+                      WhatsApp consult
+                    </WhatsAppButton>
+                  ) : (
+                    <span className="text-xs font-medium text-muted">In development</span>
+                  )}
                 </div>
               </div>
             </article>
