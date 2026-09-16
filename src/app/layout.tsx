@@ -17,12 +17,13 @@ const notoSerif = Noto_Serif_SC({
 });
 
 export const metadata: Metadata = {
-  title: "坦桑尼亚香肠 | Tanzania Sausage Co.",
+  title: "坦桑尼亚香肠 | AFRINOVA FOOD LIMITED",
   description:
-    "源自东非高原的匠心香肠品牌。精选牛肉、传统工艺与现代品质，带来温暖醇厚的餐桌风味。",
+    "AFRINOVA FOOD LIMITED — 坦桑尼亚香肠。东非风味肉制品，WhatsApp 咨询、配送与代理合作。",
   openGraph: {
-    title: "坦桑尼亚香肠 | Tanzania Sausage Co.",
-    description: "源自东非高原的匠心香肠品牌——了解产品、风味系列与咨询购买。",
+    title: "坦桑尼亚香肠 | AFRINOVA FOOD LIMITED",
+    description:
+      "源自东非高原的匠心香肠品牌——产品咨询、配送服务与代理申请。",
     locale: "zh_CN",
     type: "website",
   },

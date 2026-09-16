@@ -1,43 +1,43 @@
-# 坦桑尼亚香肠 · Tanzania Sausage Co.
+# 坦桑尼亚香肠 · AFRINOVA FOOD LIMITED
 
-坦桑尼亚香肠品牌营销官网（v1）—— 基于 Next.js App Router + TypeScript + Tailwind CSS 的纯前端展示站。
+AFRINOVA FOOD LIMITED 官方营销官网 —— Next.js App Router + TypeScript + Tailwind CSS。
 
-## 功能概览
+## 站点结构（与线框一致）
 
-- 响应式、移动优先布局
-- 品牌故事、产品目录、卖点介绍
-- 联系咨询表单（客户端成功提示，演示模式）
-- 暖色大地色系视觉（赭石 / 陶土 / 奶油 / 炭黑）
+| 导航 | 区块 | 内容 |
+|------|------|------|
+| 主页 | `#home` | 形象图、Slogan、产品特点 |
+| 产品 | `#products` | 产品目录 + WhatsApp 咨询（5 条热线） |
+| 服务 | `#services` | 配送区域 / 费用 / 代理区域（可编辑占位）+ 投诉 WhatsApp |
+| 联系我们 | `#contact` | 公司简介、TIN/VRN/地址、收款账户、代理商申请 |
+
+## 联系与收款数据
+
+统一维护于 `src/lib/contacts.ts`：
+
+- 产品咨询 WhatsApp × 5
+- 投诉 / 代理专线：`+255 750 476 666`
+- 公司电话、TIN、VRN、地址
+- Lipa / NMB 银行账户
+
+配送区域、配送费用、代理区域目前为**可编辑占位**，请在 `contacts.ts` 中替换为正式信息。
 
 ## 本地运行
 
 ```bash
-# 安装依赖
 npm install
-
-# 开发模式（默认 http://localhost:3000）
-npm run dev
-
-# 生产构建
+npm run dev      # http://localhost:3000
 npm run build
-
-# 启动生产服务
 npm start
 ```
 
 ## 技术栈
 
-- [Next.js](https://nextjs.org/)（App Router）
+- Next.js（App Router）
 - TypeScript
 - Tailwind CSS v4
-- Unsplash 图片（需联网加载）
+- Unsplash 图片（需联网）
 
-## 说明
+## 仓库
 
-- 联系电话 / 微信 / 邮箱均为**演示占位**，表单不会真正提交到后端。
-- 产品价格为展示占位，实际以咨询为准。
-- 仓库地址：https://github.com/flyjiji553/tanzania-sausage
-
-## 许可
-
-演示项目，仅供展示。
+https://github.com/flyjiji553/tanzania-sausage

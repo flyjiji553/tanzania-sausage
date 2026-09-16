@@ -1,17 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { company, consultWhatsApps } from "@/lib/contacts";
 
 const navLinks = [
-  { href: "#story", label: "品牌故事" },
-  { href: "#products", label: "产品系列" },
-  { href: "#why-us", label: "为何选择我们" },
-  { href: "#contact", label: "联系咨询" },
+  { href: "#home", label: "主页", labelEn: "Home" },
+  { href: "#products", label: "产品", labelEn: "Products" },
+  { href: "#services", label: "服务", labelEn: "Services" },
+  { href: "#contact", label: "联系我们", labelEn: "Contact" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const primaryWa = consultWhatsApps[0];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -29,13 +31,15 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#top" className="group flex items-center gap-2">
+        <a href="#home" className="group flex items-center gap-2">
           <span
-            className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold tracking-tight text-cream transition ${
-              scrolled ? "bg-ochre" : "bg-cream/20 text-cream ring-1 ring-cream/40"
+            className={`flex h-9 w-9 items-center justify-center rounded-full text-xs font-bold tracking-tight transition ${
+              scrolled
+                ? "bg-ochre text-cream"
+                : "bg-cream/20 text-cream ring-1 ring-cream/40"
             }`}
           >
-            TS
+            AF
           </span>
           <div className="leading-tight">
             <p
@@ -43,14 +47,14 @@ export default function Header() {
                 scrolled ? "text-charcoal" : "text-cream"
               }`}
             >
-              坦桑尼亚香肠
+              {company.brandZh}
             </p>
             <p
-              className={`hidden text-[11px] tracking-wide sm:block ${
+              className={`hidden text-[10px] tracking-wide sm:block ${
                 scrolled ? "text-muted" : "text-cream/75"
               }`}
             >
-              Tanzania Sausage Co.
+              {company.brandEn}
             </p>
           </div>
         </a>
@@ -68,10 +72,12 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#contact"
+            href={primaryWa.waUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full bg-ochre px-4 py-2 text-sm font-semibold text-cream shadow-sm transition hover:bg-ochre-deep"
           >
-            立即咨询
+            WhatsApp 咨询
           </a>
         </nav>
 
@@ -106,14 +112,17 @@ export default function Header() {
                 onClick={() => setOpen(false)}
               >
                 {link.label}
+                <span className="ml-2 text-xs text-muted">{link.labelEn}</span>
               </a>
             ))}
             <a
-              href="#contact"
+              href={primaryWa.waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-1 rounded-full bg-ochre px-4 py-2.5 text-center text-sm font-semibold text-cream"
               onClick={() => setOpen(false)}
             >
-              立即咨询
+              WhatsApp 咨询
             </a>
           </div>
         </div>
