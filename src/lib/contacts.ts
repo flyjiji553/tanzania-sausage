@@ -99,25 +99,25 @@ export const payment = {
 } as const;
 
 /**
- * EDITABLE PLACEHOLDERS — replace with real delivery coverage when confirmed.
- * Marked clearly on the Services page.
+ * EDITABLE PLACEHOLDERS — replace with confirmed delivery coverage.
+ * Shown on the Services section; keep structure, update zone/fee/status text.
  */
 export const deliveryAreasPlaceholder = [
-  { zone: "Kigamboni", note: "达累斯萨拉姆 · 公司所在区（占位）" },
-  { zone: "Kinondoni", note: "达累斯萨拉姆市区（占位）" },
-  { zone: "Ilala", note: "达累斯萨拉姆市区（占位）" },
-  { zone: "Temeke", note: "达累斯萨拉姆市区（占位）" },
-  { zone: "Ubungo", note: "达累斯萨拉姆市区（占位）" },
+  { zone: "Kigamboni", note: "Dar es Salaam · company area (edit me)" },
+  { zone: "Kinondoni", note: "Dar es Salaam city (edit me)" },
+  { zone: "Ilala", note: "Dar es Salaam city (edit me)" },
+  { zone: "Temeke", note: "Dar es Salaam city (edit me)" },
+  { zone: "Ubungo", note: "Dar es Salaam city (edit me)" },
 ] as const;
 
 export const deliveryFeesPlaceholder = [
-  { zone: "Kigamboni 本地", fee: "待确认 / TBD", note: "占位：请按实际运费更新" },
-  { zone: "达市其他城区", fee: "待确认 / TBD", note: "占位：可按距离或重量计价" },
-  { zone: "城际 / 外省", fee: "询价 / On request", note: "占位：需另行协商" },
+  { zone: "Kigamboni local", fee: "TBD", note: "Replace with confirmed local rate" },
+  { zone: "Other Dar districts", fee: "TBD", note: "Distance / weight based" },
+  { zone: "Intercity / upcountry", fee: "On request", note: "Quote per order" },
 ] as const;
 
 export const agentAreasPlaceholder = [
-  { region: "Dar es Salaam", status: "开放咨询（占位）" },
-  { region: "Coast / Pwani", status: "开放咨询（占位）" },
-  { region: "其他省份", status: "欢迎洽谈（占位）" },
+  { region: "Dar es Salaam", status: "Open for inquiry" },
+  { region: "Coast / Pwani", status: "Open for inquiry" },
+  { region: "Other regions", status: "Welcome to discuss" },
 ] as const;

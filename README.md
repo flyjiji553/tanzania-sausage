@@ -1,43 +1,72 @@
-# 坦桑尼亚香肠 · AFRINOVA FOOD LIMITED
+# AFRINOVA FOOD LIMITED — Tanzania Sausage Marketing Site
 
-AFRINOVA FOOD LIMITED 官方营销官网 —— Next.js App Router + TypeScript + Tailwind CSS。
+Official single-page marketing website for **AFRINOVA FOOD LIMITED** (坦桑尼亚香肠).
 
-## 站点结构（与线框一致）
+Built with **Next.js App Router**, **TypeScript**, and **Tailwind CSS v4**.
 
-| 导航 | 区块 | 内容 |
-|------|------|------|
-| 主页 | `#home` | 形象图、Slogan、产品特点 |
-| 产品 | `#products` | 产品目录 + WhatsApp 咨询（5 条热线） |
-| 服务 | `#services` | 配送区域 / 费用 / 代理区域（可编辑占位）+ 投诉 WhatsApp |
-| 联系我们 | `#contact` | 公司简介、TIN/VRN/地址、收款账户、代理商申请 |
+> This is the real AFRINOVA brand site. Do not replace company name, TIN/VRN, WhatsApp lines, or bank details with fictional placeholders.
 
-## 联系与收款数据
+## Site structure (wireframe)
 
-统一维护于 `src/lib/contacts.ts`：
+| Nav | Anchor | Content |
+|-----|--------|---------|
+| 主页 Home | `#home` | Hero image, slogan, feature chips, product highlights |
+| 产品 Products | `#products` | Product cards + 5 WhatsApp consultation lines |
+| 服务 Services | `#services` | Delivery areas / fees / agent regions + complaints |
+| 联系我们 Contact | `#contact` | Company intro, legal contacts, payment, agent form |
 
-- 产品咨询 WhatsApp × 5
-- 投诉 / 代理专线：`+255 750 476 666`
-- 公司电话、TIN、VRN、地址
-- Lipa / NMB 银行账户
+Also includes a floating WhatsApp FAB (bottom-right).
 
-配送区域、配送费用、代理区域目前为**可编辑占位**，请在 `contacts.ts` 中替换为正式信息。
-
-## 本地运行
+## Local development
 
 ```bash
+cd /workspace/tanzania-sausage   # or your clone path
 npm install
 npm run dev      # http://localhost:3000
 npm run build
 npm start
 ```
 
-## 技术栈
+## Where to edit placeholders
 
-- Next.js（App Router）
-- TypeScript
-- Tailwind CSS v4
-- Unsplash 图片（需联网）
+All business data is centralized:
 
-## 仓库
+### Real contacts (already filled) — `src/lib/contacts.ts`
+
+- Company name, TIN, VRN, TEL, P.O. Box, address
+- Product WhatsApp × 5
+- Complaint / agent line: `+255 750 476 666`
+- Lipa number + NMB bank account
+
+### Still editable samples — same file
+
+| Export | Purpose |
+|--------|---------|
+| `deliveryAreasPlaceholder` | Delivery coverage zones |
+| `deliveryFeesPlaceholder` | Fee table rows |
+| `agentAreasPlaceholder` | Agent region status |
+
+### Products catalogue — `src/lib/products.ts`
+
+Names, descriptions, Unsplash image URLs, badges, price labels.
+
+### Agent application form — `src/components/AgentForm.tsx`
+
+Client-side only: opens WhatsApp with a prefilled message, or a local `mailto:` draft. **No backend.**
+
+## Design notes
+
+- Palette: cream / ivory, deep burgundy & paprika, charcoal, subtle gold
+- Chinese body + light Swahili touches (`Karibu`, `Wasiliana nasi`)
+- Mobile-first sticky nav: Home · Products · Services · Contact
+
+## Deploy
+
+Static-friendly Next.js app. Typical options:
+
+- [Vercel](https://vercel.com) — import this GitHub repo
+- Any Node host: `npm run build && npm start`
+
+## Repository
 
 https://github.com/flyjiji553/tanzania-sausage

@@ -26,17 +26,17 @@ export default function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-cream/95 shadow-sm backdrop-blur-md"
+          ? "border-b border-charcoal/5 bg-cream/95 shadow-[0_8px_30px_-12px_rgba(31,28,26,0.25)] backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#home" className="group flex items-center gap-2">
+        <a href="#home" className="group flex items-center gap-2.5">
           <span
-            className={`flex h-9 w-9 items-center justify-center rounded-full text-xs font-bold tracking-tight transition ${
+            className={`flex h-10 w-10 items-center justify-center rounded-full text-[11px] font-bold tracking-tight shadow-sm transition ${
               scrolled
-                ? "bg-ochre text-cream"
-                : "bg-cream/20 text-cream ring-1 ring-cream/40"
+                ? "bg-burgundy text-cream ring-1 ring-gold/40"
+                : "bg-cream/15 text-cream ring-1 ring-gold/50"
             }`}
           >
             AF
@@ -50,8 +50,8 @@ export default function Header() {
               {company.brandZh}
             </p>
             <p
-              className={`hidden text-[10px] tracking-wide sm:block ${
-                scrolled ? "text-muted" : "text-cream/75"
+              className={`hidden text-[10px] tracking-[0.12em] uppercase sm:block ${
+                scrolled ? "text-muted" : "text-cream/70"
               }`}
             >
               {company.brandEn}
@@ -59,13 +59,13 @@ export default function Header() {
           </div>
         </a>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition hover:text-ochre ${
-                scrolled ? "text-charcoal-soft" : "text-cream/90"
+              className={`rounded-full px-3.5 py-2 text-sm font-medium transition hover:text-paprika ${
+                scrolled ? "text-charcoal-soft hover:bg-cream-dark/70" : "text-cream/90 hover:bg-cream/10"
               }`}
             >
               {link.label}
@@ -75,9 +75,9 @@ export default function Header() {
             href={primaryWa.waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-ochre px-4 py-2 text-sm font-semibold text-cream shadow-sm transition hover:bg-ochre-deep"
+            className="ml-2 rounded-full bg-burgundy px-4 py-2 text-sm font-semibold text-cream shadow-md shadow-burgundy/25 transition hover:bg-burgundy-deep"
           >
-            WhatsApp 咨询
+            WhatsApp
           </a>
         </nav>
 
@@ -85,8 +85,8 @@ export default function Header() {
           type="button"
           aria-label={open ? "关闭菜单" : "打开菜单"}
           aria-expanded={open}
-          className={`inline-flex h-10 w-10 items-center justify-center rounded-lg md:hidden ${
-            scrolled ? "text-charcoal" : "text-cream"
+          className={`inline-flex h-10 w-10 items-center justify-center rounded-xl md:hidden ${
+            scrolled ? "bg-cream-dark/80 text-charcoal" : "bg-cream/10 text-cream"
           }`}
           onClick={() => setOpen((v) => !v)}
         >
@@ -102,13 +102,13 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-cream-dark/60 bg-cream px-4 py-4 shadow-lg md:hidden">
-          <div className="flex flex-col gap-3">
+        <div className="border-t border-cream-dark/80 bg-ivory px-4 py-4 shadow-xl md:hidden">
+          <div className="flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-charcoal hover:bg-cream-dark"
+                className="rounded-xl px-3 py-2.5 text-sm font-medium text-charcoal hover:bg-cream-dark"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -119,10 +119,10 @@ export default function Header() {
               href={primaryWa.waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-1 rounded-full bg-ochre px-4 py-2.5 text-center text-sm font-semibold text-cream"
+              className="mt-2 rounded-full bg-burgundy px-4 py-2.5 text-center text-sm font-semibold text-cream"
               onClick={() => setOpen(false)}
             >
-              WhatsApp 咨询
+              WhatsApp 咨询 · Wasiliana nasi
             </a>
           </div>
         </div>

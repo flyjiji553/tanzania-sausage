@@ -19,11 +19,11 @@ const notoSerif = Noto_Serif_SC({
 export const metadata: Metadata = {
   title: "坦桑尼亚香肠 | AFRINOVA FOOD LIMITED",
   description:
-    "AFRINOVA FOOD LIMITED — 坦桑尼亚香肠。东非风味肉制品，WhatsApp 咨询、配送与代理合作。",
+    "AFRINOVA FOOD LIMITED — Tanzania sausage. East African flavours, WhatsApp consultation, delivery & agent partnership. Karibu · Wasiliana nasi.",
   openGraph: {
     title: "坦桑尼亚香肠 | AFRINOVA FOOD LIMITED",
     description:
-      "源自东非高原的匠心香肠品牌——产品咨询、配送服务与代理申请。",
+      "From East African pastures to your table — products, delivery, and agent applications.",
     locale: "zh_CN",
     type: "website",
   },

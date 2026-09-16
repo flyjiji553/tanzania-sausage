@@ -1,23 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --cream: #faf6f0;
-  --cream-dark: #f0e6d8;
-  --ochre: #c45c26;
-  --ochre-deep: #9a3f14;
-  --terracotta: #b85c38;
-  --charcoal: #2c2a26;
-  --charcoal-soft: #3d3a35;
-  --muted: #6b6560;
-  --success: #2f6b3a;
+  --cream: #faf7f2;
+  --cream-dark: #efe6da;
+  --ivory: #fffdf9;
+  --burgundy: #7a1f2b;
+  --burgundy-deep: #5c1520;
+  --paprika: #b33a2b;
+  --gold: #c4a35a;
+  --gold-soft: #d4bc7a;
+  --charcoal: #1f1c1a;
+  --charcoal-soft: #2f2b28;
+  --muted: #6b645c;
+  --success: #1f7a45;
+  --wa: #25d366;
 }
 
 @theme inline {
   --color-cream: var(--cream);
   --color-cream-dark: var(--cream-dark);
-  --color-ochre: var(--ochre);
-  --color-ochre-deep: var(--ochre-deep);
-  --color-terracotta: var(--terracotta);
+  --color-ivory: var(--ivory);
+  --color-burgundy: var(--burgundy);
+  --color-burgundy-deep: var(--burgundy-deep);
+  --color-paprika: var(--paprika);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-ochre: var(--paprika);
+  --color-ochre-deep: var(--burgundy-deep);
+  --color-terracotta: var(--paprika);
   --color-charcoal: var(--charcoal);
   --color-charcoal-soft: var(--charcoal-soft);
   --color-muted: var(--muted);
@@ -37,6 +47,33 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--ochre) 35%, transparent);
+  background: color-mix(in srgb, var(--paprika) 30%, transparent);
   color: var(--charcoal);
+}
+
+.section-eyebrow {
+  letter-spacing: 0.22em;
+}
+
+.card-lift {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 20px 40px -18px rgb(31 28 26 / 0.28),
+    0 0 0 1px color-mix(in srgb, var(--gold) 28%, transparent);
+}
+
+.gold-rule {
+  height: 2px;
+  width: 3rem;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.hero-chip {
+  backdrop-filter: blur(10px);
 }
