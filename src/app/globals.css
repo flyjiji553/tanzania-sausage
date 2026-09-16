@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #faf6f0;
+  --cream-dark: #f0e6d8;
+  --ochre: #c45c26;
+  --ochre-deep: #9a3f14;
+  --terracotta: #b85c38;
+  --charcoal: #2c2a26;
+  --charcoal-soft: #3d3a35;
+  --muted: #6b6560;
+  --success: #2f6b3a;
+}
+
+@theme inline {
+  --color-cream: var(--cream);
+  --color-cream-dark: var(--cream-dark);
+  --color-ochre: var(--ochre);
+  --color-ochre-deep: var(--ochre-deep);
+  --color-terracotta: var(--terracotta);
+  --color-charcoal: var(--charcoal);
+  --color-charcoal-soft: var(--charcoal-soft);
+  --color-muted: var(--muted);
+  --color-success: var(--success);
+  --font-sans: var(--font-noto-sans-sc);
+  --font-display: var(--font-noto-serif-sc);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--ochre) 35%, transparent);
+  color: var(--charcoal);
+}
