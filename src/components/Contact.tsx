@@ -14,25 +14,25 @@ export default function Contact() {
             Contact · Wasiliana nasi
           </p>
           <h2 className="mt-2 font-display text-3xl font-bold text-cream sm:text-4xl">
-            联系我们
+            Get in touch
           </h2>
           <div className="mx-auto mt-4 h-0.5 w-12 bg-gradient-to-r from-gold to-transparent" />
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <div className="rounded-3xl border border-cream/10 bg-charcoal-soft/70 p-6 shadow-lg sm:p-8">
-            <h3 className="font-display text-xl font-bold text-cream">公司简介</h3>
-            <p className="mt-1 text-xs text-gold">About the company</p>
-            <p className="mt-4 text-sm leading-relaxed text-cream/80">{company.introZh}</p>
-            <p className="mt-3 text-sm leading-relaxed text-cream/55">{company.introEn}</p>
+            <h3 className="font-display text-xl font-bold text-cream">About the company</h3>
+            <p className="mt-1 text-xs text-gold">AFRINOVA FOOD LIMITED</p>
+            <p className="mt-4 text-sm leading-relaxed text-cream/80">{company.introEn}</p>
+            <p className="mt-3 text-sm leading-relaxed text-cream/45">{company.introZh}</p>
           </div>
 
           <div className="rounded-3xl border border-cream/10 bg-charcoal-soft/70 p-6 shadow-lg sm:p-8">
-            <h3 className="font-display text-xl font-bold text-cream">公司联系方式</h3>
-            <p className="mt-1 text-xs text-gold">Legal & contact details</p>
+            <h3 className="font-display text-xl font-bold text-cream">Company details</h3>
+            <p className="mt-1 text-xs text-gold">Legal & contact</p>
             <dl className="mt-5 space-y-3.5 text-sm">
               <div>
-                <dt className="text-cream/40">公司名称 / Legal name</dt>
+                <dt className="text-cream/40">Legal name</dt>
                 <dd className="mt-0.5 font-semibold text-cream">{company.legalName}</dd>
               </div>
               <div className="grid grid-cols-2 gap-3">
@@ -54,7 +54,7 @@ export default function Contact() {
                 </dd>
               </div>
               <div>
-                <dt className="text-cream/40">地址 / Address</dt>
+                <dt className="text-cream/40">Address</dt>
                 <dd className="mt-0.5 text-cream/85">
                   {company.poBox}
                   <br />
@@ -65,7 +65,7 @@ export default function Contact() {
           </div>
 
           <div className="rounded-3xl border border-cream/10 bg-charcoal-soft/70 p-6 shadow-lg sm:p-8">
-            <h3 className="font-display text-xl font-bold text-cream">收款账户 / Payment</h3>
+            <h3 className="font-display text-xl font-bold text-cream">Payment</h3>
             <p className="mt-1 text-xs text-gold">Bank & Lipa details</p>
             <dl className="mt-5 space-y-3 text-sm">
               <div className="grid grid-cols-2 gap-3">
@@ -101,11 +101,14 @@ export default function Contact() {
             </dl>
           </div>
 
-          <div className="rounded-3xl border border-gold/35 bg-gradient-to-br from-burgundy/40 via-charcoal-soft/80 to-charcoal-soft/80 p-6 shadow-lg sm:p-8">
-            <h3 className="font-display text-xl font-bold text-cream">代理商申请入口</h3>
-            <p className="mt-1 text-xs text-gold">Agent application · {agentContact.phoneDisplay}</p>
+          <div className="rounded-3xl border border-brand-green/40 bg-gradient-to-br from-brand-green/25 via-charcoal-soft/80 to-charcoal-soft/80 p-6 shadow-lg sm:p-8">
+            <h3 className="font-display text-xl font-bold text-cream">Agent application</h3>
+            <p className="mt-1 text-xs text-gold">
+              Agent inquiry · {agentContact.phoneDisplay}
+            </p>
             <p className="mt-4 text-sm leading-relaxed text-cream/75">
-              欢迎经销商与区域代理合作。填写下方表单后通过 WhatsApp 或邮件草稿提交意向区域与渠道类型。
+              Distributors and regional agents are welcome. Fill the form below, then submit via
+              WhatsApp or email draft with your target region and channel type.
             </p>
             <AgentForm />
           </div>

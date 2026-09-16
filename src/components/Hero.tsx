@@ -2,35 +2,35 @@ import Image from "next/image";
 import { company, consultWhatsApps } from "@/lib/contacts";
 
 const chips = [
-  { title: "严选原料", titleEn: "Quality meat" },
-  { title: "东非风味", titleEn: "East African" },
-  { title: "多风味系列", titleEn: "Product range" },
-  { title: "WhatsApp 咨询", titleEn: "Easy consult" },
+  { title: "Quality meat", titleSw: "Nyama bora" },
+  { title: "East African", titleSw: "Afrika Mashariki" },
+  { title: "Product range", titleSw: "Bidhaa" },
+  { title: "WhatsApp consult", titleSw: "Wasiliana nasi" },
 ];
 
 const features = [
   {
-    title: "严选原料",
-    titleEn: "Quality meat",
-    description: "精选优质牛肉，批次可追溯，安心上桌。",
+    title: "Quality meat",
+    titleZh: "严选原料",
+    description: "Selected quality beef with batch traceability — food you can trust on the table.",
     icon: "🥩",
   },
   {
-    title: "东非风味",
-    titleEn: "East African taste",
-    description: "传统工艺与现代食品安全标准相结合。",
+    title: "East African taste",
+    titleZh: "东非风味",
+    description: "Traditional craftsmanship paired with modern food-safety standards.",
     icon: "🌶️",
   },
   {
-    title: "多种系列",
-    titleEn: "Product range",
-    description: "原味、香辣、烟熏等风味，满足日常与礼赠。",
+    title: "Product range",
+    titleZh: "多种系列",
+    description: "Original, spicy, smoked and more — for daily meals and gifting.",
     icon: "🎁",
   },
   {
-    title: "便捷咨询",
-    titleEn: "Easy consult",
-    description: "WhatsApp 多线客服，批发零售均可洽谈。",
+    title: "Easy consult",
+    titleZh: "便捷咨询",
+    description: "Multi-line WhatsApp support for retail and wholesale inquiries.",
     icon: "💬",
   },
 ];
@@ -50,22 +50,22 @@ export default function Hero() {
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-charcoal/85 via-charcoal/65 to-burgundy-deep/75" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(196,163,90,0.18),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(17,140,62,0.22),transparent_50%)]" />
 
         <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-end px-4 pb-14 pt-28 sm:justify-center sm:px-6 sm:pb-20 lg:px-8">
           <div className="max-w-2xl">
             <p className="hero-chip mb-4 inline-flex items-center gap-2 rounded-full bg-cream/10 px-3.5 py-1.5 text-xs font-medium tracking-wide text-cream/95 ring-1 ring-gold/35">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold" />
-              Karibu · {company.sloganZh}
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-green" />
+              Karibu · {company.sloganEn}
             </p>
             <h1 className="font-display text-4xl font-bold leading-[1.15] tracking-tight text-cream sm:text-5xl lg:text-6xl">
-              {company.brandZh}
+              {company.brandEn}
               <span className="mt-3 block text-lg font-semibold tracking-[0.08em] text-gold-soft sm:text-xl lg:text-2xl">
-                {company.brandEn}
+                Tanzania Sausage · {company.brandZh}
               </span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">
-              {company.sloganEn} — 温暖、醇厚、值得分享的每一口香肠。
+              {company.sloganEn} — warm, rich flavour worth sharing in every bite.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2">
@@ -76,7 +76,7 @@ export default function Hero() {
                 >
                   <span className="h-1 w-1 rounded-full bg-gold" />
                   {c.title}
-                  <span className="hidden text-cream/50 sm:inline">· {c.titleEn}</span>
+                  <span className="hidden text-cream/50 sm:inline">· {c.titleSw}</span>
                 </span>
               ))}
             </div>
@@ -84,9 +84,9 @@ export default function Hero() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href="#products"
-                className="inline-flex items-center justify-center rounded-full bg-paprika px-8 py-3.5 text-sm font-semibold text-cream shadow-lg shadow-paprika/35 transition hover:bg-burgundy"
+                className="inline-flex items-center justify-center rounded-full bg-brand-green px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-green/35 transition hover:bg-brand-green-deep"
               >
-                了解产品 Products
+                View products · Bidhaa
               </a>
               <a
                 href={primaryWa.waUrl}
@@ -94,7 +94,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-gold/40 bg-cream/10 px-8 py-3.5 text-sm font-semibold text-cream backdrop-blur-sm transition hover:bg-cream/20"
               >
-                WhatsApp 咨询
+                WhatsApp · Wasiliana nasi
               </a>
             </div>
           </div>
@@ -105,11 +105,11 @@ export default function Hero() {
         <div className="absolute inset-x-0 -top-8 mx-auto hidden h-16 max-w-5xl rounded-3xl bg-ivory/80 shadow-xl ring-1 ring-charcoal/5 backdrop-blur sm:block" aria-hidden />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="section-eyebrow text-xs font-semibold uppercase text-paprika">
+            <p className="section-eyebrow text-xs font-semibold uppercase text-brand-green">
               Features
             </p>
             <h2 className="mt-2 font-display text-2xl font-bold text-charcoal sm:text-3xl">
-              产品特点
+              Why choose AFRINOVA
             </h2>
             <div className="gold-rule mx-auto mt-4" />
           </div>
@@ -125,7 +125,7 @@ export default function Hero() {
                 <h3 className="mt-3 font-display text-lg font-semibold text-charcoal">
                   {f.title}
                 </h3>
-                <p className="mt-0.5 text-xs font-medium text-paprika">{f.titleEn}</p>
+                <p className="mt-0.5 text-xs font-medium text-paprika">{f.titleZh}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{f.description}</p>
               </div>
             ))}

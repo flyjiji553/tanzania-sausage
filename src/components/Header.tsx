@@ -5,10 +5,10 @@ import Image from "next/image";
 import { consultWhatsApps } from "@/lib/contacts";
 
 const navLinks = [
-  { href: "#home", label: "主页", labelEn: "Home" },
-  { href: "#products", label: "产品", labelEn: "Products" },
-  { href: "#services", label: "服务", labelEn: "Services" },
-  { href: "#contact", label: "联系我们", labelEn: "Contact" },
+  { href: "#home", label: "Home" },
+  { href: "#products", label: "Products", sw: "Bidhaa" },
+  { href: "#services", label: "Services" },
+  { href: "#contact", label: "Contact", sw: "Wasiliana nasi" },
 ];
 
 export default function Header() {
@@ -21,7 +21,7 @@ export default function Header() {
         <a href="#home" className="group flex shrink-0 items-center">
           <Image
             src="/brand/afrinova-horizontal.jpeg"
-            alt="AFRINOVA — Africa Nova"
+            alt="AFRINOVA FOOD LIMITED"
             width={220}
             height={64}
             priority
@@ -34,7 +34,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-full px-3.5 py-2 text-sm font-medium text-charcoal-soft transition hover:bg-cream-dark/70 hover:text-paprika"
+              className="rounded-full px-3.5 py-2 text-sm font-medium text-charcoal-soft transition hover:bg-cream-dark/70 hover:text-brand-green"
             >
               {link.label}
             </a>
@@ -43,7 +43,7 @@ export default function Header() {
             href={primaryWa.waUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 rounded-full bg-burgundy px-4 py-2 text-sm font-semibold text-cream shadow-md shadow-burgundy/25 transition hover:bg-burgundy-deep"
+            className="ml-2 rounded-full bg-brand-green px-4 py-2 text-sm font-semibold text-white shadow-md shadow-brand-green/25 transition hover:bg-brand-green-deep"
           >
             WhatsApp
           </a>
@@ -51,12 +51,12 @@ export default function Header() {
 
         <button
           type="button"
-          aria-label={open ? "关闭菜单" : "打开菜单"}
+          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cream-dark/80 text-charcoal md:hidden"
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="sr-only">菜单</span>
+          <span className="sr-only">Menu</span>
           <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             {open ? (
               <path strokeLinecap="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -78,17 +78,19 @@ export default function Header() {
                 onClick={() => setOpen(false)}
               >
                 {link.label}
-                <span className="ml-2 text-xs text-muted">{link.labelEn}</span>
+                {link.sw && (
+                  <span className="ml-2 text-xs text-muted">{link.sw}</span>
+                )}
               </a>
             ))}
             <a
               href={primaryWa.waUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 rounded-full bg-burgundy px-4 py-2.5 text-center text-sm font-semibold text-cream"
+              className="mt-2 rounded-full bg-brand-green px-4 py-2.5 text-center text-sm font-semibold text-white"
               onClick={() => setOpen(false)}
             >
-              WhatsApp 咨询 · Wasiliana nasi
+              WhatsApp · Wasiliana nasi
             </a>
           </div>
         </div>

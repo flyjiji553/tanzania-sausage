@@ -8,15 +8,15 @@ export default function Products() {
     <section id="products" className="scroll-mt-20 bg-cream-dark/40 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="section-eyebrow text-xs font-semibold uppercase text-paprika">
-            Products
+          <p className="section-eyebrow text-xs font-semibold uppercase text-brand-green">
+            Bidhaa · Products
           </p>
           <h2 className="mt-2 font-display text-3xl font-bold text-charcoal sm:text-4xl">
-            产品
+            Our products
           </h2>
           <div className="gold-rule mx-auto mt-4" />
           <p className="mt-4 text-base text-muted sm:text-lg">
-            精选风味系列。价格以 WhatsApp 咨询报价为准。
+            Selected flavour range. Prices confirmed via WhatsApp quote.
           </p>
         </div>
 
@@ -52,13 +52,13 @@ export default function Products() {
                   {product.description}
                 </p>
                 <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-cream-dark pt-4">
-                  <p className="text-base font-bold text-burgundy">{product.price}</p>
+                  <p className="text-base font-bold text-brand-green">{product.price}</p>
                   <WhatsAppButton
                     contact={consultWhatsApps[0]}
                     variant="dark"
                     className="!px-4 !py-2 text-xs"
                   >
-                    WhatsApp 咨询
+                    WhatsApp consult
                   </WhatsAppButton>
                 </div>
               </div>
@@ -66,30 +66,27 @@ export default function Products() {
           ))}
         </div>
 
-        <div className="mt-14 overflow-hidden rounded-3xl border border-burgundy/15 bg-ivory shadow-lg">
-          <div className="border-b border-cream-dark bg-gradient-to-r from-burgundy/5 via-gold/10 to-transparent px-6 py-6 sm:px-8">
+        <div className="mt-14 overflow-hidden rounded-3xl border border-brand-green/20 bg-ivory shadow-lg">
+          <div className="border-b border-cream-dark bg-gradient-to-r from-brand-green/8 via-gold/10 to-transparent px-6 py-6 sm:px-8">
             <h3 className="font-display text-2xl font-bold text-charcoal">
-              产品咨询入口
+              Product consultation
             </h3>
             <p className="mt-1 text-sm text-muted">
-              Wasiliana nasi · Consultation via WhatsApp · {company.brandEn}
+              Wasiliana nasi · WhatsApp · {company.brandEn}
             </p>
           </div>
           <div className="grid gap-3 p-6 sm:grid-cols-2 sm:p-8 lg:grid-cols-3">
             {consultWhatsApps.map((c) => (
               <div
                 key={c.id}
-                className="flex flex-col gap-2.5 rounded-2xl border border-cream-dark bg-cream/60 p-4 transition hover:border-gold/40 hover:bg-cream"
+                className="flex flex-col gap-2.5 rounded-2xl border border-cream-dark bg-cream/60 p-4 transition hover:border-brand-green/35 hover:bg-cream"
               >
-                <p className="text-sm font-semibold text-charcoal">
-                  {c.label}
-                  <span className="ml-2 text-xs font-normal text-muted">{c.labelEn}</span>
-                </p>
-                <a href={c.telHref} className="text-sm font-medium text-paprika hover:underline">
+                <p className="text-sm font-semibold text-charcoal">{c.label}</p>
+                <a href={c.telHref} className="text-sm font-medium text-brand-green hover:underline">
                   {c.phoneDisplay}
                 </a>
                 <WhatsAppButton contact={c} className="w-full">
-                  打开 WhatsApp
+                  Open WhatsApp
                 </WhatsAppButton>
               </div>
             ))}

@@ -11,7 +11,7 @@ const variants: Record<NonNullable<Props["variant"]>, string> = {
   primary: "bg-[#25D366] text-white hover:bg-[#1da851] shadow-sm",
   outline:
     "border border-[#25D366]/40 bg-[#25D366]/10 text-[#128C7E] hover:bg-[#25D366]/20",
-  dark: "bg-burgundy text-cream hover:bg-burgundy-deep",
+  dark: "bg-brand-green text-white hover:bg-brand-green-deep",
   light:
     "border border-cream/30 bg-cream/10 text-cream hover:bg-cream/20",
 };

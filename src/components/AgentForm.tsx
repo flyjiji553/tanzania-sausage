@@ -42,7 +42,7 @@ export default function AgentForm() {
     <form className="mt-6 space-y-3" onSubmit={onWhatsApp}>
       <div className="grid gap-3 sm:grid-cols-2">
         <label className="block text-xs text-cream/55">
-          姓名 / Name
+          Name
           <input
             className={`mt-1 ${field}`}
             value={name}
@@ -52,7 +52,7 @@ export default function AgentForm() {
           />
         </label>
         <label className="block text-xs text-cream/55">
-          电话 / Phone
+          Phone
           <input
             className={`mt-1 ${field}`}
             value={phone}
@@ -62,7 +62,7 @@ export default function AgentForm() {
           />
         </label>
         <label className="block text-xs text-cream/55">
-          意向区域 / Region
+          Region
           <input
             className={`mt-1 ${field}`}
             value={region}
@@ -72,7 +72,7 @@ export default function AgentForm() {
           />
         </label>
         <label className="block text-xs text-cream/55">
-          渠道类型 / Channel
+          Channel
           <input
             className={`mt-1 ${field}`}
             value={channel}
@@ -82,7 +82,7 @@ export default function AgentForm() {
         </label>
       </div>
       <label className="block text-xs text-cream/55">
-        备注 / Note
+        Note
         <textarea
           className={`mt-1 min-h-[88px] resize-y ${field}`}
           value={note}
@@ -96,24 +96,24 @@ export default function AgentForm() {
           className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#1da851]"
         >
           <WhatsAppIcon className="h-4 w-4" />
-          WhatsApp 提交申请
+          Submit via WhatsApp
         </button>
         <button
           type="button"
           onClick={onMailto}
           className="inline-flex items-center justify-center rounded-full border border-cream/30 bg-cream/10 px-5 py-2.5 text-sm font-semibold text-cream transition hover:bg-cream/20"
         >
-          用邮件草稿打开
+          Open email draft
         </button>
         <a
           href={agentContact.telHref}
           className="inline-flex items-center justify-center rounded-full border border-gold/40 bg-transparent px-5 py-2.5 text-sm font-semibold text-gold-soft transition hover:bg-cream/10"
         >
-          拨打 {agentContact.phoneDisplay}
+          Call {agentContact.phoneDisplay}
         </a>
       </div>
       <p className="text-[11px] text-cream/45">
-        无后端：提交将打开 WhatsApp 预填消息，或生成本地邮件草稿。
+        No backend: submit opens WhatsApp with a prefilled message, or a local email draft.
       </p>
     </form>
   );

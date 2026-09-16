@@ -31,7 +31,7 @@ export type WhatsAppContact = {
 export const consultWhatsApps: WhatsAppContact[] = [
   {
     id: "wa-01",
-    label: "咨询热线 01",
+    label: "Consult 01",
     labelEn: "Consult 01",
     phoneDisplay: "+255 625 932 177",
     waUrl: "https://wa.me/255625932177",
@@ -39,7 +39,7 @@ export const consultWhatsApps: WhatsAppContact[] = [
   },
   {
     id: "wa-02",
-    label: "咨询热线 02",
+    label: "Consult 02",
     labelEn: "Consult 02",
     phoneDisplay: "+255 611 064 660",
     waUrl: "https://wa.me/255611064660",
@@ -47,7 +47,7 @@ export const consultWhatsApps: WhatsAppContact[] = [
   },
   {
     id: "wa-03",
-    label: "咨询热线 03",
+    label: "Consult 03",
     labelEn: "Consult 03",
     phoneDisplay: "+255 637 762 120",
     waUrl: "https://wa.me/255637762120",
@@ -55,7 +55,7 @@ export const consultWhatsApps: WhatsAppContact[] = [
   },
   {
     id: "wa-04",
-    label: "咨询热线 04",
+    label: "Consult 04",
     labelEn: "Consult 04",
     phoneDisplay: "+255 706 262 120",
     waUrl: "https://wa.me/255706262120",
@@ -63,7 +63,7 @@ export const consultWhatsApps: WhatsAppContact[] = [
   },
   {
     id: "wa-05",
-    label: "咨询热线 05",
+    label: "Consult 05",
     labelEn: "Consult 05",
     phoneDisplay: "+255 660 866 165",
     waUrl: "https://wa.me/255660866165",
@@ -73,7 +73,7 @@ export const consultWhatsApps: WhatsAppContact[] = [
 
 export const complaintContact: WhatsAppContact = {
   id: "complaint",
-  label: "投诉服务",
+  label: "Complaints",
   labelEn: "Complaints",
   phoneDisplay: "+255 750 476 666",
   waUrl: "https://wa.me/255750476666",
@@ -82,7 +82,7 @@ export const complaintContact: WhatsAppContact = {
 
 export const agentContact: WhatsAppContact = {
   id: "agent",
-  label: "代理商申请",
+  label: "Agent inquiry",
   labelEn: "Agent inquiry",
   phoneDisplay: "+255 750 476 666",
   waUrl: "https://wa.me/255750476666",

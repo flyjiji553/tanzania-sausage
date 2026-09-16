@@ -13,6 +13,8 @@
   --charcoal-soft: #2f2b28;
   --muted: #6b645c;
   --success: #1f7a45;
+  --brand-green: #118c3e;
+  --brand-green-deep: #0d6f31;
   --wa: #25d366;
 }
 
@@ -32,8 +34,10 @@
   --color-charcoal-soft: var(--charcoal-soft);
   --color-muted: var(--muted);
   --color-success: var(--success);
-  --font-sans: var(--font-noto-sans-sc);
-  --font-display: var(--font-noto-serif-sc);
+  --color-brand-green: var(--brand-green);
+  --color-brand-green-deep: var(--brand-green-deep);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-source-serif);
 }
 
 html {
@@ -48,7 +52,7 @@ body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--paprika) 30%, transparent);
+  background: color-mix(in srgb, var(--brand-green) 28%, transparent);
   color: var(--charcoal);
 }
 
