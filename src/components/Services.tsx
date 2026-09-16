@@ -19,11 +19,7 @@ export default function Services() {
           </h2>
           <div className="gold-rule mx-auto mt-4" />
           <p className="mt-4 text-base text-muted sm:text-lg">
-            配送、代理与售后投诉通道。覆盖与费用可在{" "}
-            <code className="rounded bg-cream-dark px-1.5 py-0.5 text-xs text-burgundy">
-              src/lib/contacts.ts
-            </code>{" "}
-            更新。
+            配送、代理与售后投诉通道。具体覆盖与费用请通过 WhatsApp 确认。
           </p>
         </div>
 
@@ -34,9 +30,6 @@ export default function Services() {
                 <h3 className="font-display text-xl font-bold text-charcoal">配送区域</h3>
                 <p className="mt-1 text-xs text-muted">Delivery areas</p>
               </div>
-              <span className="rounded-full bg-gold/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-burgundy">
-                Editable
-              </span>
             </div>
             <ul className="mt-5 space-y-2.5">
               {deliveryAreasPlaceholder.map((a) => (
@@ -60,9 +53,6 @@ export default function Services() {
                 <h3 className="font-display text-xl font-bold text-charcoal">配送费用</h3>
                 <p className="mt-1 text-xs text-muted">Delivery fees</p>
               </div>
-              <span className="rounded-full bg-gold/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-burgundy">
-                Editable
-              </span>
             </div>
             <div className="mt-5 overflow-hidden rounded-xl border border-cream-dark">
               <table className="w-full text-left text-sm">
@@ -98,9 +88,6 @@ export default function Services() {
                 <h3 className="font-display text-xl font-bold text-charcoal">代理区域</h3>
                 <p className="mt-1 text-xs text-muted">Agent regions</p>
               </div>
-              <span className="rounded-full bg-gold/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-burgundy">
-                Editable
-              </span>
             </div>
             <ul className="mt-5 space-y-2.5">
               {agentAreasPlaceholder.map((a) => (
