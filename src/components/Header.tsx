@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { company, consultWhatsApps } from "@/lib/contacts";
 
 const navLinks = [
@@ -12,48 +12,22 @@ const navLinks = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const primaryWa = consultWhatsApps[0];
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-charcoal/5 bg-cream/95 shadow-[0_8px_30px_-12px_rgba(31,28,26,0.25)] backdrop-blur-md"
-          : "bg-transparent"
-      }`}
-    >
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-charcoal/5 bg-cream/95 shadow-[0_8px_30px_-12px_rgba(31,28,26,0.25)] backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <a href="#home" className="group flex items-center gap-2.5">
           <span
-            className={`flex h-10 w-10 items-center justify-center rounded-full text-[11px] font-bold tracking-tight shadow-sm transition ${
-              scrolled
-                ? "bg-burgundy text-cream ring-1 ring-gold/40"
-                : "bg-cream/15 text-cream ring-1 ring-gold/50"
-            }`}
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-burgundy text-[11px] font-bold tracking-tight text-cream shadow-sm ring-1 ring-gold/40"
           >
             AF
           </span>
           <div className="leading-tight">
-            <p
-              className={`font-display text-base font-semibold sm:text-lg ${
-                scrolled ? "text-charcoal" : "text-cream"
-              }`}
-            >
+            <p className="font-display text-base font-semibold text-charcoal sm:text-lg">
               {company.brandZh}
             </p>
-            <p
-              className={`hidden text-[10px] tracking-[0.12em] uppercase sm:block ${
-                scrolled ? "text-muted" : "text-cream/70"
-              }`}
-            >
+            <p className="hidden text-[10px] tracking-[0.12em] uppercase text-muted sm:block">
               {company.brandEn}
             </p>
           </div>
@@ -64,9 +38,7 @@ export default function Header() {
             <a
               key={link.href}
               href={link.href}
-              className={`rounded-full px-3.5 py-2 text-sm font-medium transition hover:text-paprika ${
-                scrolled ? "text-charcoal-soft hover:bg-cream-dark/70" : "text-cream/90 hover:bg-cream/10"
-              }`}
+              className="rounded-full px-3.5 py-2 text-sm font-medium text-charcoal-soft transition hover:bg-cream-dark/70 hover:text-paprika"
             >
               {link.label}
             </a>
@@ -85,9 +57,7 @@ export default function Header() {
           type="button"
           aria-label={open ? "关闭菜单" : "打开菜单"}
           aria-expanded={open}
-          className={`inline-flex h-10 w-10 items-center justify-center rounded-xl md:hidden ${
-            scrolled ? "bg-cream-dark/80 text-charcoal" : "bg-cream/10 text-cream"
-          }`}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cream-dark/80 text-charcoal md:hidden"
           onClick={() => setOpen((v) => !v)}
         >
           <span className="sr-only">菜单</span>

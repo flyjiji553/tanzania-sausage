@@ -7,7 +7,7 @@ import AgentForm from "@/components/AgentForm";
 
 export default function Contact() {
   return (
-    <section id="contact" className="scroll-mt-20 bg-charcoal py-16 sm:py-24">
+    <section id="contact" className="scroll-mt-24 bg-charcoal py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <p className="section-eyebrow text-xs font-semibold uppercase text-gold">
