@@ -33,7 +33,7 @@ export default function Hero() {
     <section id="home" className="scroll-mt-0">
       <div className="relative min-h-[92vh] overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1558030006-450675393462?w=1800&q=85"
+          src="/brand/hero-hot-chicken.png"
           alt="AFRINOVA sausage grill — appetizing product imagery"
           fill
           priority
