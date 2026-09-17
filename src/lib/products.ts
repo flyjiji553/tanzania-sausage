@@ -24,8 +24,8 @@ export type Product = {
 export const products: Product[] = [
   {
     id: "chicken-sausage",
+    // Chinese (data comment only): 鸡肉香肠 — UI displays English name
     name: "Chicken Sausage",
-    nameZh: "鸡肉肠",
     description:
       "Our current factory product: a dependable chicken sausage made for everyday meals, foodservice, and wholesale orders. No refrigeration required — ready to eat.",
     longDescription:
@@ -42,12 +42,14 @@ export const products: Product[] = [
     badge: "Available",
     model: "AF-CS-01",
     specs: [
-      { label: "Model", value: "AF-CS-01", note: "Placeholder — confirm with sales" },
-      { label: "Protein", value: "High protein", note: "Typical selling point" },
-      { label: "Storage", value: "No refrigeration required" },
-      { label: "Serving", value: "Ready to eat" },
-      { label: "Pack / net weight", value: "On request", note: "Placeholder" },
-      { label: "Shelf life", value: "Confirm via WhatsApp", note: "Placeholder" },
+      { label: "Product name", value: "Chicken Sausage" },
+      { label: "Spec", value: "28g" },
+      { label: "Quantity", value: "100 PCS/box" },
+      { label: "Shelf life", value: "6 months" },
+      {
+        label: "Storage",
+        value: "Store at room temperature away from light; do not freeze.",
+      },
     ],
   },
   {
@@ -70,10 +72,11 @@ export const products: Product[] = [
     badge: "Coming soon",
     model: "AF-PS-01",
     specs: [
-      { label: "Model", value: "AF-PS-01", note: "Placeholder — TBD at launch" },
-      { label: "Target", value: "Pets", note: "Recipe in development" },
-      { label: "Pack / net weight", value: "TBD", note: "Placeholder" },
-      { label: "Status", value: "Coming soon" },
+      { label: "Product name", value: "Pet Sausage" },
+      { label: "Spec", value: "TBD" },
+      { label: "Quantity", value: "TBD" },
+      { label: "Shelf life", value: "TBD" },
+      { label: "Storage", value: "TBD" },
     ],
   },
   {
@@ -96,12 +99,11 @@ export const products: Product[] = [
     badge: "Coming soon",
     model: "AF-BS-01",
     specs: [
-      { label: "Model", value: "AF-BS-01", note: "Placeholder — TBD at launch" },
-      { label: "Protein", value: "High protein", note: "Planned selling point" },
-      { label: "Storage", value: "No refrigeration required", note: "Planned" },
-      { label: "Serving", value: "Ready to eat", note: "Planned" },
-      { label: "Pack / net weight", value: "TBD", note: "Placeholder" },
-      { label: "Status", value: "Coming soon" },
+      { label: "Product name", value: "Beef Sausage" },
+      { label: "Spec", value: "TBD" },
+      { label: "Quantity", value: "TBD" },
+      { label: "Shelf life", value: "TBD" },
+      { label: "Storage", value: "TBD" },
     ],
   },
 ];

@@ -61,10 +61,11 @@ export default async function ProductDetailPage({ params }: Props) {
               >
                 {product.badge}
               </span>
-              <span className="rounded-full bg-cream-dark px-2.5 py-1 text-xs font-medium text-muted">
-                Model {product.model}
-                <span className="ml-1 text-[10px] opacity-70">(placeholder)</span>
-              </span>
+              {product.status === "coming_soon" && (
+                <span className="rounded-full bg-cream-dark px-2.5 py-1 text-xs font-medium text-muted">
+                  Specs TBD
+                </span>
+              )}
             </div>
 
             <h1 className="mt-3 font-display text-3xl font-bold text-charcoal sm:text-4xl">
@@ -100,11 +101,13 @@ export default async function ProductDetailPage({ params }: Props) {
             <div className="mt-10 overflow-hidden rounded-2xl border border-cream-dark bg-ivory">
               <div className="border-b border-cream-dark bg-cream/60 px-4 py-3">
                 <h2 className="font-display text-lg font-semibold text-charcoal">
-                  Model / specs
+                  Product specs
                 </h2>
-                <p className="text-xs text-muted">
-                  Some fields are placeholders until confirmed with sales
-                </p>
+                {product.status === "coming_soon" && (
+                  <p className="text-xs text-muted">
+                    Specs TBD until launch
+                  </p>
+                )}
               </div>
               <dl className="divide-y divide-cream-dark">
                 {product.specs.map((spec) => (

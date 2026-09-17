@@ -2,28 +2,28 @@ import Image from "next/image";
 import { company } from "@/lib/contacts";
 
 const chips = [
-  { title: "No refrigeration required", titleZh: "无需冷藏", titleSw: "Hakuna friji" },
-  { title: "Ready to eat", titleZh: "直接食用", titleSw: "Tayari kuliwa" },
-  { title: "High protein", titleZh: "高蛋白", titleSw: "Protini nyingi" },
+  { title: "No refrigeration required" },
+  { title: "Ready to eat" },
+  { title: "High protein" },
 ];
 
 const features = [
   {
     title: "No refrigeration required",
-    titleZh: "无需冷藏",
-    description: "Shelf-stable convenience for shops, homes, and travel — no cold chain needed for everyday use.",
+    description:
+      "Shelf-stable convenience for shops, homes, and travel — no cold chain needed for everyday use.",
     icon: "🌡️",
   },
   {
     title: "Ready to eat",
-    titleZh: "直接食用",
-    description: "Enjoy straight from the pack or lightly heated — ideal for quick meals and foodservice.",
+    description:
+      "Enjoy straight from the pack or lightly heated — ideal for quick meals and foodservice.",
     icon: "🍽️",
   },
   {
     title: "High protein",
-    titleZh: "高蛋白",
-    description: "Protein-rich sausage made for satisfying everyday meals and wholesale demand.",
+    description:
+      "High-protein foods meet daily nutritional needs and are better suited to the demands of the African market.",
     icon: "💪",
   },
 ];
@@ -45,16 +45,9 @@ export default function Hero() {
 
         <div className="relative mx-auto flex min-h-[92vh] max-w-6xl flex-col justify-end px-4 pb-14 pt-28 sm:justify-center sm:px-6 sm:pb-20 lg:px-8">
           <div className="max-w-2xl">
-            <p className="hero-chip mb-4 inline-flex items-center gap-2 rounded-full bg-cream/10 px-3.5 py-1.5 text-xs font-medium tracking-wide text-cream/95 ring-1 ring-gold/35">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-green" />
-              Karibu · {company.sloganEn}
-            </p>
             <h1 className="font-display text-4xl font-bold leading-[1.15] tracking-tight text-cream sm:text-5xl lg:text-6xl">
               Welcome to AFRINOVA FOOD
             </h1>
-            <p className="mt-3 text-sm font-medium text-gold-soft/90 sm:text-base">
-              欢迎来到 AFRINOVA FOOD
-            </p>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">
               {company.sloganEn} — warm, rich flavour worth sharing in every bite.
             </p>
@@ -67,7 +60,6 @@ export default function Hero() {
                 >
                   <span className="h-1 w-1 rounded-full bg-gold" />
                   {c.title}
-                  <span className="hidden text-cream/50 sm:inline">· {c.titleZh}</span>
                 </span>
               ))}
             </div>
@@ -108,7 +100,6 @@ export default function Hero() {
                 <h3 className="mt-3 font-display text-lg font-semibold text-charcoal">
                   {f.title}
                 </h3>
-                <p className="mt-0.5 text-xs font-medium text-brand-green">{f.titleZh}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{f.description}</p>
               </div>
             ))}
