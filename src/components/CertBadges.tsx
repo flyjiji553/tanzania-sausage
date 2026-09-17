@@ -8,13 +8,15 @@ type Props = {
 };
 
 export default function CertBadges({ onDark = false, className = "", size = "md" }: Props) {
-  const h = size === "sm" ? 56 : 72;
+  const h = size === "sm" ? 42 : 72;
+  const pad = size === "sm" ? "p-2" : "p-3";
+  const gap = size === "sm" ? "gap-2" : "gap-3";
   const plate = onDark
-    ? "rounded-2xl bg-white p-3 shadow-sm"
-    : "rounded-2xl bg-white/90 p-3 ring-1 ring-charcoal/5 shadow-sm";
+    ? `rounded-2xl bg-white ${pad} shadow-sm`
+    : `rounded-2xl bg-white/90 ${pad} ring-1 ring-charcoal/5 shadow-sm`;
 
   return (
-    <div className={`flex flex-wrap items-center gap-3 ${className}`}>
+    <div className={`flex flex-nowrap items-center ${gap} ${className}`}>
       <div className={plate}>
         <Image
           src="/brand/logo-tbs.png"
