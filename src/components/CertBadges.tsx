@@ -17,7 +17,7 @@ export default function CertBadges({ onDark = false, className = "", size = "md"
     <div className={`flex flex-wrap items-center gap-3 ${className}`}>
       <div className={plate}>
         <Image
-          src="/brand/tbs.jpeg"
+          src="/brand/logo-tbs.png"
           alt="Tanzania Bureau of Standards (TBS) certification"
           width={h}
           height={h}
@@ -27,7 +27,7 @@ export default function CertBadges({ onDark = false, className = "", size = "md"
       </div>
       <div className={plate}>
         <Image
-          src="/brand/halal-bakwata.jpeg"
+          src="/brand/logo-bakwata-halal.png"
           alt="BAKWATA Halal certification"
           width={h}
           height={h}

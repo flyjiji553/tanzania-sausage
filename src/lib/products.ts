@@ -14,7 +14,6 @@ export type ProductPackSize = {
 export type Product = {
   id: string;
   name: string;
-  nameZh?: string;
   description: string;
   longDescription: string;
   price: string;
@@ -30,7 +29,6 @@ export type Product = {
 export const products: Product[] = [
   {
     id: "chicken-sausage",
-    // Chinese (data comment only): 鸡肉香肠 — UI displays English name
     name: "Chicken Sausage",
     description:
       "Our current factory product: a dependable chicken sausage made for everyday meals, foodservice, and wholesale orders. No refrigeration required — ready to eat.",
@@ -38,11 +36,7 @@ export const products: Product[] = [
       "AFRINOVA Chicken Sausage is our flagship ready-to-eat product, made for Tanzanian households, shops, and foodservice. It needs no refrigeration, is high in protein, and is ready to enjoy straight from the pack or lightly heated. Ideal for retail shelves, wholesale distribution, and everyday meals.",
     price: "On request",
     image: "/products/chicken-sausage.png",
-    images: [
-      "/products/chicken-sausage.png",
-      "/products/chicken-sausage.png",
-      "/products/chicken-sausage.png",
-    ],
+    images: ["/products/chicken-sausage.png"],
     status: "available",
     badge: "Available",
     model: "AF-CS-01",
@@ -62,7 +56,6 @@ export const products: Product[] = [
   {
     id: "pet-sausage",
     name: "Pet Sausage",
-    nameZh: "宠物肠",
     description:
       "A pet-focused sausage recipe currently in development, with launch details to be announced soon.",
     longDescription:
@@ -89,7 +82,6 @@ export const products: Product[] = [
   {
     id: "beef-sausage",
     name: "Beef Sausage",
-    nameZh: "牛肉肠",
     description:
       "Our next beef sausage line is in R&D and will launch after development and production planning are complete.",
     longDescription:

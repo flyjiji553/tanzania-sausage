@@ -39,9 +39,9 @@ export default function AgentForm() {
     "w-full rounded-xl border border-cream/20 bg-charcoal/40 px-3.5 py-2.5 text-sm text-cream placeholder:text-cream/35 outline-none transition focus:border-gold/50 focus:ring-2 focus:ring-gold/20";
 
   return (
-    <form className="mt-6 space-y-3" onSubmit={onWhatsApp}>
-      <div className="grid gap-3 sm:grid-cols-2">
-        <label className="block text-xs text-cream/55">
+    <form className="mt-6 w-full space-y-3" onSubmit={onWhatsApp}>
+      <div className="grid w-full gap-3 sm:grid-cols-2">
+        <label className="block w-full text-xs text-cream/55">
           Name
           <input
             className={`mt-1 ${field}`}
@@ -51,7 +51,7 @@ export default function AgentForm() {
             required
           />
         </label>
-        <label className="block text-xs text-cream/55">
+        <label className="block w-full text-xs text-cream/55">
           Phone
           <input
             className={`mt-1 ${field}`}
@@ -61,7 +61,7 @@ export default function AgentForm() {
             required
           />
         </label>
-        <label className="block text-xs text-cream/55">
+        <label className="block w-full text-xs text-cream/55">
           Region
           <input
             className={`mt-1 ${field}`}
@@ -71,7 +71,7 @@ export default function AgentForm() {
             required
           />
         </label>
-        <label className="block text-xs text-cream/55">
+        <label className="block w-full text-xs text-cream/55">
           Channel
           <input
             className={`mt-1 ${field}`}
@@ -81,19 +81,19 @@ export default function AgentForm() {
           />
         </label>
       </div>
-      <label className="block text-xs text-cream/55">
+      <label className="block w-full text-xs text-cream/55">
         Note
         <textarea
-          className={`mt-1 min-h-[88px] resize-y ${field}`}
+          className={`mt-1 min-h-[88px] w-full resize-y ${field}`}
           value={note}
           onChange={(e) => setNote(e.target.value)}
           placeholder="Tell us about your business"
         />
       </label>
-      <div className="flex flex-col gap-3 pt-1 sm:flex-row">
+      <div className="flex w-full flex-col gap-3 pt-1 sm:flex-row">
         <button
           type="submit"
-          className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#1da851]"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-[#1da851] sm:w-auto"
         >
           <WhatsAppIcon className="h-4 w-4" />
           Submit via WhatsApp
@@ -101,13 +101,13 @@ export default function AgentForm() {
         <button
           type="button"
           onClick={onMailto}
-          className="inline-flex items-center justify-center rounded-full border border-cream/30 bg-cream/10 px-5 py-2.5 text-sm font-semibold text-cream transition hover:bg-cream/20"
+          className="inline-flex w-full items-center justify-center rounded-full border border-cream/30 bg-cream/10 px-5 py-2.5 text-sm font-semibold text-cream transition hover:bg-cream/20 sm:w-auto"
         >
           Open email draft
         </button>
         <a
           href={agentContact.telHref}
-          className="inline-flex items-center justify-center rounded-full border border-gold/40 bg-transparent px-5 py-2.5 text-sm font-semibold text-gold-soft transition hover:bg-cream/10"
+          className="inline-flex w-full items-center justify-center rounded-full border border-gold/40 bg-transparent px-5 py-2.5 text-sm font-semibold text-gold-soft transition hover:bg-cream/10 sm:w-auto"
         >
           Call {agentContact.phoneDisplay}
         </a>

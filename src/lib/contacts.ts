@@ -1,22 +1,20 @@
 /** Centralized real business contacts — edit here to update the whole site. */
 
 export const company = {
-  brandZh: "坦桑尼亚香肠",
   brandEn: "AFRINOVA FOOD LIMITED",
   shortBrandEn: "AFRINOVA FOOD",
   legalName: "AFRINOVA FOOD LIMITED",
-  tin: "178 484 028",
+  tin: "178-484-028",
   vrn: "40-324130-W",
   tel: "+255 749 318 888",
   telHref: "tel:+255749318888",
   poBox: "P.O.Box 19088",
   address: "kisarawe 2 Kigamboni Dar es salaam Tanzania",
-  sloganZh: "源自东非高原 · 匠心美味到餐桌",
   sloganEn: "From East African pastures to your table",
-  introZh:
-    "AFRINOVA FOOD LIMITED（坦桑尼亚香肠）专注于东非风味肉制品的生产与销售。我们以严选原料、规范工艺与可靠配送，为坦桑尼亚及周边市场的家庭、餐饮与经销伙伴提供高品质香肠产品。",
-  introEn:
-    "AFRINOVA FOOD LIMITED produces and distributes East African-inspired sausage products for households, hospitality partners, and distributors across Tanzania.",
+  introEn: [
+    "AFRINOVA FOOD LIMITED is a Tanzania-based company specializing in the processing and production of meat products. The company primarily produces and sells chicken, beef, fish products, and pet food.",
+    "We carefully select high-quality locally sourced raw materials and adopt standardized production processes to ensure consistent product quality. Supported by a reliable distribution network, we provide high-quality sausage products to household consumers, food service providers, and distribution partners across Tanzania and surrounding markets.",
+  ],
 } as const;
 
 export type WhatsAppContact = {

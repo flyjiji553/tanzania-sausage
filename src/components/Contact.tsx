@@ -15,52 +15,26 @@ export default function Contact() {
           <div className="mx-auto mt-4 h-0.5 w-12 bg-gradient-to-r from-gold to-transparent" />
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-3xl border border-cream/10 bg-charcoal-soft/70 p-6 shadow-lg sm:p-8">
+        <div className="mt-12 grid gap-6">
+          <div className="rounded-3xl border border-cream/10 bg-charcoal-soft/70 p-5 shadow-lg sm:p-8">
             <h3 className="font-display text-xl font-bold text-cream">About the company</h3>
             <p className="mt-1 text-xs text-gold">AFRINOVA FOOD LIMITED</p>
-            <p className="mt-4 text-sm leading-relaxed text-cream/80">{company.introEn}</p>
-            <p className="mt-3 text-sm leading-relaxed text-cream/45">{company.introZh}</p>
+            <div className="mt-4 space-y-3">
+              {company.introEn.map((para) => (
+                <p key={para.slice(0, 40)} className="text-sm leading-relaxed text-cream/80">
+                  {para}
+                </p>
+              ))}
+            </div>
+            <a
+              href={company.telHref}
+              className="mt-5 block w-full rounded-2xl border border-gold/35 bg-cream/5 px-4 py-3.5 text-center text-sm font-semibold text-gold-soft transition hover:bg-cream/10"
+            >
+              Call {company.tel}
+            </a>
           </div>
 
-          <div className="rounded-3xl border border-cream/10 bg-charcoal-soft/70 p-6 shadow-lg sm:p-8">
-            <h3 className="font-display text-xl font-bold text-cream">Company details</h3>
-            <p className="mt-1 text-xs text-gold">Legal & contact</p>
-            <dl className="mt-5 space-y-3.5 text-sm">
-              <div>
-                <dt className="text-cream/40">Legal name</dt>
-                <dd className="mt-0.5 font-semibold text-cream">{company.legalName}</dd>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <dt className="text-cream/40">TIN</dt>
-                  <dd className="mt-0.5 font-medium text-cream">{company.tin}</dd>
-                </div>
-                <div>
-                  <dt className="text-cream/40">VRN</dt>
-                  <dd className="mt-0.5 font-medium text-cream">{company.vrn}</dd>
-                </div>
-              </div>
-              <div>
-                <dt className="text-cream/40">TEL</dt>
-                <dd className="mt-0.5">
-                  <a href={company.telHref} className="font-medium text-gold-soft hover:underline">
-                    {company.tel}
-                  </a>
-                </dd>
-              </div>
-              <div>
-                <dt className="text-cream/40">Address</dt>
-                <dd className="mt-0.5 text-cream/85">
-                  {company.poBox}
-                  <br />
-                  {company.address}
-                </dd>
-              </div>
-            </dl>
-          </div>
-
-          <div className="rounded-3xl border border-brand-green/40 bg-gradient-to-br from-brand-green/25 via-charcoal-soft/80 to-charcoal-soft/80 p-6 shadow-lg sm:p-8 lg:col-span-2">
+          <div className="rounded-3xl border border-brand-green/40 bg-gradient-to-br from-brand-green/25 via-charcoal-soft/80 to-charcoal-soft/80 p-5 shadow-lg sm:p-8">
             <h3 className="font-display text-xl font-bold text-cream">Agent application</h3>
             <p className="mt-1 text-xs text-gold">
               Agent inquiry · {agentContact.phoneDisplay}

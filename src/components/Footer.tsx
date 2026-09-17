@@ -15,19 +15,26 @@ export default function Footer() {
             className="inline-block rounded-xl bg-white p-2 shadow-sm ring-1 ring-charcoal/5"
           >
             <Image
-              src="/brand/afrinova-horizontal.jpeg"
+              src="/brand/logo-afrinova.png"
               alt="AFRINOVA FOOD LIMITED"
               width={200}
               height={58}
               className="h-10 w-auto object-contain"
             />
           </Link>
-          <p className="mt-3 text-sm font-medium text-brand-green">{company.legalName}</p>
-          <p className="mt-1 text-sm text-muted">{company.sloganEn}</p>
-          <p className="mt-1 text-xs text-muted">
-            {company.poBox} · {company.address}
-          </p>
-          <div className="mt-4">
+          <div className="mt-4 space-y-1.5 text-sm text-charcoal-soft">
+            <p className="font-semibold text-brand-green">{company.legalName}</p>
+            <p>{company.address}</p>
+            <p>{company.poBox}</p>
+            <p>
+              <a href={company.telHref} className="hover:text-brand-green hover:underline">
+                {company.tel}
+              </a>
+            </p>
+            <p>TIN：{company.tin}</p>
+            <p>VAT：{company.vrn}</p>
+          </div>
+          <div className="mt-5">
             <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted">
               Certified
             </p>
@@ -58,8 +65,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-charcoal/5 py-4 text-center text-xs text-muted">
-        © {year} {company.legalName}. All rights reserved. TIN {company.tin} · VRN{" "}
-        {company.vrn}
+        © {year} {company.legalName}. All rights reserved.
       </div>
     </footer>
   );

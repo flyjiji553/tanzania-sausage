@@ -21,7 +21,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 lg:px-8">
         <Link href="/#home" className="group flex shrink-0 items-center">
           <Image
-            src="/brand/afrinova-horizontal.jpeg"
+            src="/brand/logo-afrinova.png"
             alt="AFRINOVA FOOD LIMITED"
             width={220}
             height={64}

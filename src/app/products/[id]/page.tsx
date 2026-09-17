@@ -71,9 +71,6 @@ export default async function ProductDetailPage({ params }: Props) {
             <h1 className="mt-3 font-display text-3xl font-bold text-charcoal sm:text-4xl">
               {product.name}
             </h1>
-            {product.nameZh && (
-              <p className="mt-1 text-sm font-medium text-muted">{product.nameZh}</p>
-            )}
             <p className="mt-4 text-base leading-relaxed text-muted">
               {product.longDescription}
             </p>
@@ -169,9 +166,6 @@ export default async function ProductDetailPage({ params }: Props) {
                   <p className="font-display text-lg font-semibold text-charcoal">
                     {p.name}
                   </p>
-                  {p.nameZh && (
-                    <p className="mt-0.5 text-xs text-muted">{p.nameZh}</p>
-                  )}
                   <p className="mt-2 text-sm text-muted line-clamp-2">
                     {p.description}
                   </p>

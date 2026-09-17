@@ -1,10 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { products } from "@/lib/products";
 import { company, consultWhatsApps } from "@/lib/contacts";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import WhatsAppButton, { WhatsAppIcon } from "@/components/WhatsAppButton";
 
 export default function Products() {
+  const [showMoreConsult, setShowMoreConsult] = useState(false);
+  const primaryWa = consultWhatsApps[0];
+  const moreConsult = consultWhatsApps.slice(1);
+
   return (
     <section id="products" className="scroll-mt-20 bg-cream-dark/40 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -60,16 +67,22 @@ export default function Products() {
                     {product.name}
                   </h3>
                 </Link>
-                {product.nameZh && (
-                  <p className="mt-0.5 text-xs font-medium text-muted">{product.nameZh}</p>
-                )}
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
                   {product.description}
                 </p>
-                {product.packSizes && (
-                  <p className="mt-3 text-xs font-semibold text-brand-green">
-                    {product.packSizes.length} pack sizes
-                  </p>
+                {product.status === "available" && product.packSizes && product.packSizes.length > 0 && (
+                  <div className="-mx-1 mt-3 overflow-x-auto px-1">
+                    <div className="flex w-max max-w-full gap-2 sm:flex-wrap sm:w-auto">
+                      {product.packSizes.slice(0, 2).map((pack) => (
+                        <span
+                          key={`${pack.weight}-${pack.quantity}`}
+                          className="shrink-0 rounded-full bg-brand-green/10 px-2.5 py-1 text-xs font-semibold text-brand-green"
+                        >
+                          {pack.weight} · {pack.quantity}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 )}
                 <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-cream-dark pt-4">
                   <p
@@ -92,15 +105,65 @@ export default function Products() {
         </div>
 
         <div className="mt-14 overflow-hidden rounded-3xl border border-brand-green/20 bg-ivory shadow-lg">
-          <div className="border-b border-cream-dark bg-gradient-to-r from-brand-green/8 via-gold/10 to-transparent px-6 py-6 sm:px-8">
-            <h3 className="font-display text-2xl font-bold text-charcoal">
+          <div className="border-b border-cream-dark bg-gradient-to-r from-brand-green/8 via-gold/10 to-transparent px-4 py-5 sm:px-8 sm:py-6">
+            <h3 className="font-display text-xl font-bold text-charcoal sm:text-2xl">
               Product consultation
             </h3>
             <p className="mt-1 text-sm text-muted">
               Wasiliana nasi · WhatsApp · {company.brandEn}
             </p>
           </div>
-          <div className="grid gap-3 p-6 sm:grid-cols-2 sm:p-8 lg:grid-cols-3">
+
+          {/* Mobile: primary big button + expand more */}
+          <div className="p-4 sm:hidden">
+            <a
+              href={primaryWa.waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-4 py-3.5 text-sm font-semibold text-white shadow-md shadow-[#25D366]/30"
+            >
+              <WhatsAppIcon className="h-5 w-5 shrink-0" />
+              <span className="truncate">
+                {primaryWa.label} · {primaryWa.phoneDisplay}
+              </span>
+            </a>
+            {moreConsult.length > 0 && (
+              <>
+                <button
+                  type="button"
+                  className="mt-3 w-full rounded-xl border border-cream-dark bg-cream/60 px-3 py-2.5 text-sm font-semibold text-brand-green"
+                  onClick={() => setShowMoreConsult((v) => !v)}
+                  aria-expanded={showMoreConsult}
+                >
+                  {showMoreConsult ? "Hide more numbers" : `More consult lines (${moreConsult.length})`}
+                </button>
+                {showMoreConsult && (
+                  <div className="mt-3 space-y-2.5">
+                    {moreConsult.map((c) => (
+                      <div
+                        key={c.id}
+                        className="flex flex-col gap-2 rounded-2xl border border-cream-dark bg-cream/60 p-3.5"
+                      >
+                        <p className="text-sm font-semibold text-charcoal">{c.label}</p>
+                        <a
+                          href={c.telHref}
+                          className="block w-full rounded-xl bg-brand-green/10 px-3 py-2.5 text-sm font-medium text-brand-green"
+                        >
+                          {c.phoneDisplay}
+                        </a>
+                        <WhatsAppButton contact={c} className="w-full">
+                          Open WhatsApp
+                        </WhatsAppButton>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+
+          {/* Desktop / tablet grid */}
+          <div className="hidden gap-3 p-6 sm:grid sm:grid-cols-2 sm:p-8 lg:grid-cols-3">
             {consultWhatsApps.map((c) => (
               <div
                 key={c.id}
