@@ -31,12 +31,11 @@ export const products: Product[] = [
     longDescription:
       "AFRINOVA Chicken Sausage is our flagship ready-to-eat product, made for Tanzanian households, shops, and foodservice. It needs no refrigeration, is high in protein, and is ready to enjoy straight from the pack or lightly heated. Ideal for retail shelves, wholesale distribution, and everyday meals.",
     price: "On request",
-    image:
-      "https://images.unsplash.com/photo-1558030006-450675393462?w=800&q=80",
+    image: "/products/chicken-sausage.png",
     images: [
-      "https://images.unsplash.com/photo-1558030006-450675393462?w=1200&q=80",
-      "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=1200&q=80",
-      "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&q=80",
+      "/products/chicken-sausage.png",
+      "/products/chicken-sausage.png",
+      "/products/chicken-sausage.png",
     ],
     status: "available",
     badge: "Available",
