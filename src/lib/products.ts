@@ -6,6 +6,11 @@ export type ProductSpec = {
   note?: string;
 };
 
+export type ProductPackSize = {
+  weight: string;
+  quantity: string;
+};
+
 export type Product = {
   id: string;
   name: string;
@@ -18,6 +23,7 @@ export type Product = {
   status: ProductStatus;
   badge: string;
   model: string;
+  packSizes?: ProductPackSize[];
   specs: ProductSpec[];
 };
 
@@ -40,10 +46,12 @@ export const products: Product[] = [
     status: "available",
     badge: "Available",
     model: "AF-CS-01",
+    packSizes: [
+      { weight: "28g", quantity: "100 PCS/BOX" },
+      { weight: "48g", quantity: "50 PCS/BOX" },
+    ],
     specs: [
       { label: "Product name", value: "Chicken Sausage" },
-      { label: "Spec", value: "28g" },
-      { label: "Quantity", value: "100 PCS/box" },
       { label: "Shelf life", value: "6 months" },
       {
         label: "Storage",

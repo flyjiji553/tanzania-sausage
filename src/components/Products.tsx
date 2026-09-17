@@ -66,6 +66,11 @@ export default function Products() {
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
                   {product.description}
                 </p>
+                {product.packSizes && (
+                  <p className="mt-3 text-xs font-semibold text-brand-green">
+                    {product.packSizes.length} pack sizes
+                  </p>
+                )}
                 <div className="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-cream-dark pt-4">
                   <p
                     className={`text-base font-bold ${

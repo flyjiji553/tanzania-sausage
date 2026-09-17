@@ -98,7 +98,32 @@ export default async function ProductDetailPage({ params }: Props) {
               )}
             </div>
 
-            <div className="mt-10 overflow-hidden rounded-2xl border border-cream-dark bg-ivory">
+            {product.packSizes && (
+              <div className="mt-10 overflow-hidden rounded-2xl border border-brand-green/20 bg-ivory">
+                <div className="border-b border-cream-dark bg-brand-green/5 px-4 py-3">
+                  <h2 className="font-display text-lg font-semibold text-charcoal">
+                    Available pack sizes
+                  </h2>
+                </div>
+                <div className="divide-y divide-cream-dark">
+                  {product.packSizes.map((pack, index) => (
+                    <div
+                      key={`${pack.weight}-${pack.quantity}`}
+                      className="grid grid-cols-[40%_1fr] gap-3 px-4 py-3 text-sm"
+                    >
+                      <p className="font-medium text-muted">Pack size {index + 1}</p>
+                      <p className="font-semibold text-charcoal">
+                        {pack.weight} · {pack.quantity}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div
+              className={`${product.packSizes ? "mt-4" : "mt-10"} overflow-hidden rounded-2xl border border-cream-dark bg-ivory`}
+            >
               <div className="border-b border-cream-dark bg-cream/60 px-4 py-3">
                 <h2 className="font-display text-lg font-semibold text-charcoal">
                   Product specs
