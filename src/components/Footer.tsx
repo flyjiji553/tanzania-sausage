@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { company, consultWhatsApps } from "@/lib/contacts";
 import CertBadges from "@/components/CertBadges";
 
@@ -9,7 +10,10 @@ export default function Footer() {
     <footer className="border-t border-charcoal/10 bg-cream-dark/50">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 py-12 sm:flex-row sm:items-start sm:justify-between sm:px-6 lg:px-8">
         <div className="max-w-md">
-          <a href="#home" className="inline-block rounded-xl bg-white p-2 shadow-sm ring-1 ring-charcoal/5">
+          <Link
+            href="/#home"
+            className="inline-block rounded-xl bg-white p-2 shadow-sm ring-1 ring-charcoal/5"
+          >
             <Image
               src="/brand/afrinova-horizontal.jpeg"
               alt="AFRINOVA FOOD LIMITED"
@@ -17,7 +21,7 @@ export default function Footer() {
               height={58}
               className="h-10 w-auto object-contain"
             />
-          </a>
+          </Link>
           <p className="mt-3 text-sm font-medium text-brand-green">{company.legalName}</p>
           <p className="mt-1 text-sm text-muted">{company.sloganEn}</p>
           <p className="mt-1 text-xs text-muted">
@@ -31,16 +35,16 @@ export default function Footer() {
           </div>
         </div>
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
-          <a href="#home" className="hover:text-brand-green">
+          <a href="/#home" className="hover:text-brand-green">
             Home
           </a>
-          <a href="#products" className="hover:text-brand-green">
+          <a href="/#products" className="hover:text-brand-green">
             Products
           </a>
-          <a href="#services" className="hover:text-brand-green">
+          <a href="/#services" className="hover:text-brand-green">
             Services
           </a>
-          <a href="#contact" className="hover:text-brand-green">
+          <a href="/#contact" className="hover:text-brand-green">
             Contact
           </a>
           <a

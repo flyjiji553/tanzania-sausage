@@ -1,8 +1,4 @@
-import {
-  agentContact,
-  company,
-  payment,
-} from "@/lib/contacts";
+import { agentContact, company } from "@/lib/contacts";
 import AgentForm from "@/components/AgentForm";
 
 export default function Contact() {
@@ -64,44 +60,7 @@ export default function Contact() {
             </dl>
           </div>
 
-          <div className="rounded-3xl border border-cream/10 bg-charcoal-soft/70 p-6 shadow-lg sm:p-8">
-            <h3 className="font-display text-xl font-bold text-cream">Payment</h3>
-            <p className="mt-1 text-xs text-gold">Bank & Lipa details</p>
-            <dl className="mt-5 space-y-3 text-sm">
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <dt className="text-cream/40">Lipa number</dt>
-                  <dd className="mt-0.5 font-semibold text-cream">{payment.lipaNumber}</dd>
-                </div>
-                <div>
-                  <dt className="text-cream/40">Jina / Lipa name</dt>
-                  <dd className="mt-0.5 text-cream/90">{payment.lipaName}</dd>
-                </div>
-              </div>
-              <div>
-                <dt className="text-cream/40">Party Name</dt>
-                <dd className="mt-0.5 text-cream/90">{payment.partyName}</dd>
-              </div>
-              <div>
-                <dt className="text-cream/40">Account Number</dt>
-                <dd className="mt-0.5 font-semibold tracking-wide text-gold-soft">
-                  {payment.accountNumber}
-                </dd>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <dt className="text-cream/40">Bank Name</dt>
-                  <dd className="mt-0.5 text-cream/90">{payment.bankName}</dd>
-                </div>
-                <div>
-                  <dt className="text-cream/40">Branch</dt>
-                  <dd className="mt-0.5 text-cream/90">{payment.branch}</dd>
-                </div>
-              </div>
-            </dl>
-          </div>
-
-          <div className="rounded-3xl border border-brand-green/40 bg-gradient-to-br from-brand-green/25 via-charcoal-soft/80 to-charcoal-soft/80 p-6 shadow-lg sm:p-8">
+          <div className="rounded-3xl border border-brand-green/40 bg-gradient-to-br from-brand-green/25 via-charcoal-soft/80 to-charcoal-soft/80 p-6 shadow-lg sm:p-8 lg:col-span-2">
             <h3 className="font-display text-xl font-bold text-cream">Agent application</h3>
             <p className="mt-1 text-xs text-gold">
               Agent inquiry · {agentContact.phoneDisplay}

@@ -3,6 +3,7 @@
 export const company = {
   brandZh: "坦桑尼亚香肠",
   brandEn: "AFRINOVA FOOD LIMITED",
+  shortBrandEn: "AFRINOVA FOOD",
   legalName: "AFRINOVA FOOD LIMITED",
   tin: "178 484 028",
   vrn: "40-324130-W",
@@ -89,6 +90,7 @@ export const agentContact: WhatsAppContact = {
   telHref: "tel:+255750476666",
 };
 
+/** Kept for future use; payment UI temporarily removed from Contact/footer. */
 export const payment = {
   lipaNumber: "357095470",
   lipaName: "LIPA AFRINOVA FOOD",
@@ -98,24 +100,31 @@ export const payment = {
   branch: "Kibada",
 } as const;
 
-/**
- * EDITABLE PLACEHOLDERS — replace with confirmed delivery coverage.
- * Shown on the Services section; keep structure, update zone/fee/status text.
- */
 export const deliveryAreasPlaceholder = [
-  { zone: "Kigamboni", note: "Dar es Salaam · factory district · same-day by arrangement" },
-  { zone: "Kinondoni", note: "Dar es Salaam urban · scheduled van runs" },
-  { zone: "Ilala", note: "Dar es Salaam urban · scheduled van runs" },
-  { zone: "Temeke", note: "Dar es Salaam urban · scheduled van runs" },
-  { zone: "Ubungo", note: "Dar es Salaam urban · scheduled van runs" },
+  {
+    zone: "Dar es Salaam urban",
+    note: "Free delivery within Dar es Salaam city",
+  },
+  {
+    zone: "Other cities / surrounding areas",
+    note: "Charged by actual cost — please consult WhatsApp",
+  },
 ] as const;
 
 export const deliveryFeesPlaceholder = [
-  { zone: "Kigamboni local", fee: "Confirm via WhatsApp", note: "Indicative — confirm by order size" },
-  { zone: "Other Dar districts", fee: "Confirm via WhatsApp", note: "Priced by distance / weight" },
-  { zone: "Intercity / upcountry", fee: "On request", note: "Quoted per route and volume" },
+  {
+    zone: "Dar es Salaam urban",
+    fee: "Free delivery",
+    note: "City urban coverage",
+  },
+  {
+    zone: "Other cities / surrounding areas",
+    fee: "Actual cost",
+    note: "Please consult WhatsApp for a quote",
+  },
 ] as const;
 
+/** Temporarily unused — agent regions section removed from Services. */
 export const agentAreasPlaceholder = [
   { region: "Dar es Salaam", status: "Open for distributor inquiry" },
   { region: "Coast / Pwani", status: "Open for distributor inquiry" },

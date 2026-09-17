@@ -1,12 +1,14 @@
 import {
-  agentAreasPlaceholder,
   complaintContact,
+  consultWhatsApps,
   deliveryAreasPlaceholder,
   deliveryFeesPlaceholder,
 } from "@/lib/contacts";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Services() {
+  const primaryWa = consultWhatsApps[0];
+
   return (
     <section id="services" className="scroll-mt-20 bg-cream py-16 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -15,15 +17,16 @@ export default function Services() {
             Services
           </p>
           <h2 className="mt-2 font-display text-3xl font-bold text-charcoal sm:text-4xl">
-            Delivery, agents & support
+            Delivery & support
           </h2>
           <div className="gold-rule mx-auto mt-4" />
           <p className="mt-4 text-base text-muted sm:text-lg">
-            Coverage and fees are confirmed via WhatsApp for each order.
+            Free delivery in Dar es Salaam urban. Other areas are charged by actual cost —
+            please consult WhatsApp.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <div className="card-lift rounded-3xl border border-cream-dark bg-ivory p-6 shadow-sm">
             <div className="flex items-start justify-between gap-2">
               <div>
@@ -80,26 +83,20 @@ export default function Services() {
                 </tbody>
               </table>
             </div>
-          </div>
-
-          <div className="card-lift rounded-3xl border border-cream-dark bg-ivory p-6 shadow-sm">
-            <div className="flex items-start justify-between gap-2">
-              <div>
-                <h3 className="font-display text-xl font-bold text-charcoal">Agent regions</h3>
-                <p className="mt-1 text-xs text-muted">Maeneo ya mawakala</p>
+            <div className="mt-5 rounded-2xl border border-brand-green/25 bg-brand-green/5 p-4">
+              <p className="text-sm font-semibold text-charcoal">
+                Delivery fee notice
+              </p>
+              <p className="mt-1 text-sm text-muted">
+                For other cities and surrounding areas, fees are charged by actual cost.
+                Please consult WhatsApp for a quote.
+              </p>
+              <div className="mt-3">
+                <WhatsAppButton contact={primaryWa} variant="dark" className="!px-4 !py-2 text-xs">
+                  Please consult WhatsApp
+                </WhatsAppButton>
               </div>
             </div>
-            <ul className="mt-5 space-y-2.5">
-              {agentAreasPlaceholder.map((a) => (
-                <li
-                  key={a.region}
-                  className="rounded-xl border border-cream-dark/80 bg-cream/70 px-3.5 py-3"
-                >
-                  <p className="text-sm font-semibold text-charcoal">{a.region}</p>
-                  <p className="text-xs text-muted">{a.status}</p>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 

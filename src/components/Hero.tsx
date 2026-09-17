@@ -1,43 +1,34 @@
 import Image from "next/image";
-import { company, consultWhatsApps } from "@/lib/contacts";
+import { company } from "@/lib/contacts";
 
 const chips = [
-  { title: "Quality meat", titleSw: "Nyama bora" },
-  { title: "East African", titleSw: "Afrika Mashariki" },
-  { title: "Focused product line", titleSw: "Bidhaa" },
-  { title: "WhatsApp consult", titleSw: "Wasiliana nasi" },
+  { title: "No refrigeration required", titleZh: "无需冷藏", titleSw: "Hakuna friji" },
+  { title: "Ready to eat", titleZh: "直接食用", titleSw: "Tayari kuliwa" },
+  { title: "High protein", titleZh: "高蛋白", titleSw: "Protini nyingi" },
 ];
 
 const features = [
   {
-    title: "Quality ingredients",
-    titleSw: "Viungo bora",
-    description: "Carefully developed recipes and consistent production for food you can trust on the table.",
-    icon: "🍗",
+    title: "No refrigeration required",
+    titleZh: "无需冷藏",
+    description: "Shelf-stable convenience for shops, homes, and travel — no cold chain needed for everyday use.",
+    icon: "🌡️",
   },
   {
-    title: "Made for Tanzania",
-    titleSw: "Kwa Tanzania",
-    description: "Traditional craftsmanship paired with modern food-safety standards.",
-    icon: "🌍",
+    title: "Ready to eat",
+    titleZh: "直接食用",
+    description: "Enjoy straight from the pack or lightly heated — ideal for quick meals and foodservice.",
+    icon: "🍽️",
   },
   {
-    title: "Focused product line",
-    titleSw: "Bidhaa",
-    description: "Chicken starch sausage is available now; pet and beef starch sausage are in development.",
-    icon: "🌭",
-  },
-  {
-    title: "Easy consult",
-    titleSw: "Wasiliana nasi",
-    description: "Multi-line WhatsApp support for retail and wholesale inquiries.",
-    icon: "💬",
+    title: "High protein",
+    titleZh: "高蛋白",
+    description: "Protein-rich sausage made for satisfying everyday meals and wholesale demand.",
+    icon: "💪",
   },
 ];
 
 export default function Hero() {
-  const primaryWa = consultWhatsApps[0];
-
   return (
     <section id="home" className="scroll-mt-0">
       <div className="relative min-h-[92vh] overflow-hidden">
@@ -59,11 +50,11 @@ export default function Hero() {
               Karibu · {company.sloganEn}
             </p>
             <h1 className="font-display text-4xl font-bold leading-[1.15] tracking-tight text-cream sm:text-5xl lg:text-6xl">
-              {company.brandEn}
-              <span className="mt-3 block text-lg font-semibold tracking-[0.08em] text-gold-soft sm:text-xl lg:text-2xl">
-                Tanzania Sausage · {company.brandZh}
-              </span>
+              Welcome to AFRINOVA FOOD
             </h1>
+            <p className="mt-3 text-sm font-medium text-gold-soft/90 sm:text-base">
+              欢迎来到 AFRINOVA FOOD
+            </p>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-cream/85 sm:text-lg">
               {company.sloganEn} — warm, rich flavour worth sharing in every bite.
             </p>
@@ -76,7 +67,7 @@ export default function Hero() {
                 >
                   <span className="h-1 w-1 rounded-full bg-gold" />
                   {c.title}
-                  <span className="hidden text-cream/50 sm:inline">· {c.titleSw}</span>
+                  <span className="hidden text-cream/50 sm:inline">· {c.titleZh}</span>
                 </span>
               ))}
             </div>
@@ -86,15 +77,7 @@ export default function Hero() {
                 href="#products"
                 className="inline-flex items-center justify-center rounded-full bg-brand-green px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-green/35 transition hover:bg-brand-green-deep"
               >
-                View products · Bidhaa
-              </a>
-              <a
-                href={primaryWa.waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-gold/40 bg-cream/10 px-8 py-3.5 text-sm font-semibold text-cream backdrop-blur-sm transition hover:bg-cream/20"
-              >
-                WhatsApp · Wasiliana nasi
+                View products
               </a>
             </div>
           </div>
@@ -113,7 +96,7 @@ export default function Hero() {
             </h2>
             <div className="gold-rule mx-auto mt-4" />
           </div>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
             {features.map((f) => (
               <div
                 key={f.title}
@@ -125,38 +108,8 @@ export default function Hero() {
                 <h3 className="mt-3 font-display text-lg font-semibold text-charcoal">
                   {f.title}
                 </h3>
-                <p className="mt-0.5 text-xs font-medium text-brand-green">{f.titleSw}</p>
+                <p className="mt-0.5 text-xs font-medium text-brand-green">{f.titleZh}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{f.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            {[
-              {
-                src: "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=900&q=80",
-                alt: "Sausage product display",
-              },
-              {
-                src: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=900&q=80",
-                alt: "East African landscape",
-              },
-              {
-                src: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=900&q=80",
-                alt: "Shared table meal",
-              },
-            ].map((img) => (
-              <div
-                key={img.src}
-                className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-md ring-1 ring-charcoal/5"
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover transition duration-700 hover:scale-105"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                />
               </div>
             ))}
           </div>

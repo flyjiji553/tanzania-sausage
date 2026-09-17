@@ -2,13 +2,14 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { consultWhatsApps } from "@/lib/contacts";
 
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#products", label: "Products", sw: "Bidhaa" },
-  { href: "#services", label: "Services" },
-  { href: "#contact", label: "Contact", sw: "Wasiliana nasi" },
+  { href: "/#home", label: "Home" },
+  { href: "/#products", label: "Products", sw: "Bidhaa" },
+  { href: "/#services", label: "Services" },
+  { href: "/#contact", label: "Contact", sw: "Wasiliana nasi" },
 ];
 
 export default function Header() {
@@ -18,7 +19,7 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-charcoal/5 bg-cream/95 shadow-[0_8px_30px_-12px_rgba(31,28,26,0.25)] backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 lg:px-8">
-        <a href="#home" className="group flex shrink-0 items-center">
+        <Link href="/#home" className="group flex shrink-0 items-center">
           <Image
             src="/brand/afrinova-horizontal.jpeg"
             alt="AFRINOVA FOOD LIMITED"
@@ -27,7 +28,7 @@ export default function Header() {
             priority
             className="h-10 w-auto object-contain sm:h-11"
           />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (

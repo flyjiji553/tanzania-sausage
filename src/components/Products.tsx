@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { products } from "@/lib/products";
 import { company, consultWhatsApps } from "@/lib/contacts";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -16,7 +17,8 @@ export default function Products() {
           </h2>
           <div className="gold-rule mx-auto mt-4" />
           <p className="mt-4 text-base text-muted sm:text-lg">
-            Our factory currently produces chicken starch sausage. Pet sausage and beef starch sausage are launching soon.
+            Our factory currently produces chicken sausage. Pet sausage and beef sausage are
+            launching soon.
           </p>
         </div>
 
@@ -28,7 +30,7 @@ export default function Products() {
                 product.status === "coming_soon" ? "opacity-90" : ""
               }`}
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <Link href={`/products/${product.id}`} className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -51,11 +53,13 @@ export default function Products() {
                     {product.badge}
                   </span>
                 )}
-              </div>
+              </Link>
               <div className="flex flex-1 flex-col p-5">
-                <h3 className="font-display text-xl font-semibold text-charcoal">
-                  {product.name}
-                </h3>
+                <Link href={`/products/${product.id}`} className="group/title">
+                  <h3 className="font-display text-xl font-semibold text-charcoal transition group-hover/title:text-brand-green">
+                    {product.name}
+                  </h3>
+                </Link>
                 {product.nameZh && (
                   <p className="mt-0.5 text-xs font-medium text-muted">{product.nameZh}</p>
                 )}
@@ -70,17 +74,12 @@ export default function Products() {
                   >
                     {product.price}
                   </p>
-                  {product.status === "available" ? (
-                    <WhatsAppButton
-                      contact={consultWhatsApps[0]}
-                      variant="dark"
-                      className="!px-4 !py-2 text-xs"
-                    >
-                      WhatsApp consult
-                    </WhatsAppButton>
-                  ) : (
-                    <span className="text-xs font-medium text-muted">In development</span>
-                  )}
+                  <Link
+                    href={`/products/${product.id}`}
+                    className="rounded-full border border-brand-green/30 bg-brand-green/5 px-4 py-2 text-xs font-semibold text-brand-green transition hover:bg-brand-green hover:text-white"
+                  >
+                    View details
+                  </Link>
                 </div>
               </div>
             </article>
